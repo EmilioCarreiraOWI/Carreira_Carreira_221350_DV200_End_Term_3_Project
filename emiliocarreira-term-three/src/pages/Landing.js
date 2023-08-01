@@ -1,4 +1,5 @@
-import './StylingPages/LandingPageCSS.css'; 
+import React from 'react';
+import '../App'; 
 
 function App() {
     return (
