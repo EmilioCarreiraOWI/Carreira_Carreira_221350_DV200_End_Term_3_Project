@@ -102,6 +102,18 @@
 
 #container1 {
   border-radius: 50px;
+  height: auto;
+  padding-bottom: 30px;
   border: 5px solid #000;
   background: rgba(196, 196, 196, 0.10);
+  margin-top: 100px;
+}
+
+.pupularHeading {
+  font-family: Bungee Inline;
+  color: rgba(162, 99, 55, 1);
+  height: auto;
+  
+  margin-left: auto;
+  margin-right: auto;
 }

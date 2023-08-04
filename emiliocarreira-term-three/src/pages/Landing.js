@@ -57,14 +57,7 @@ const data = [{
         fontSize: '20px',
         fontWeight: 'bold',
       }
-
-      const listOfData = [
-        // your data array here
-      ]
       
-      
-      
-
 function Landing() {
     return (
       <>
@@ -100,10 +93,10 @@ function Landing() {
           </div>
         </div>
 
-      <Container id='container1' className='mt-5'>
-        <Row>
-          <Col id='testbox' lg={12} className='justify-content-center'>
-              <h1 className='headings'>Popular Games</h1>
+      <Container id='container1'>
+        <Row className='mt-3'>
+          <Col lg={12} className='justify-content-center pupularHeading'>
+              <h1>Popular Games</h1>
           </Col>
         </Row>
         <Row className='mt-3'>
@@ -113,29 +106,56 @@ function Landing() {
           </Col>
           <Col id='testbox' lg={2} className='justify-content-center'>
               <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
-              <p>Hello world</p>
+              <p className='text-center mt-2'>Game Name Placeholder</p>
           </Col>
           <Col id='testbox' lg={2} className='justify-content-center'>
               <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
-              <p>Hello world</p>
+              <p className='text-center mt-2'>Game Name Placeholder</p>
           </Col>
           <Col id='testbox' lg={2} className='justify-content-center'>
               <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
-              <p>Hello world</p>
+              <p className='text-center mt-2'>Game Name Placeholder</p>
           </Col>
           <Col id='testbox' lg={2} className='justify-content-center'>
               <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
-              <p>Hello world</p>
+              <p className='text-center mt-2'>Game Name Placeholder</p>
           </Col>
         </Row>
-
-        <Row className="mt-5">
+        <Row className='mt-3'>
           <Col id='testbox' lg={2} className='justify-content-center'>
-            <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+                <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+                <p className='text-center mt-2'>Game Name Placeholder</p>
+            </Col>
+            <Col id='testbox' lg={2} className='justify-content-center'>
+                <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+                <p className='text-center mt-2'>Game Name Placeholder</p>
+            </Col>
+            <Col id='testbox' lg={2} className='justify-content-center'>
+                <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+                <p className='text-center mt-2'>Game Name Placeholder</p>
+            </Col>
+            <Col id='testbox' lg={2} className='justify-content-center'>
+                <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+                <p className='text-center mt-2'>Game Name Placeholder</p>
+            </Col>
+            <Col id='testbox' lg={2} className='justify-content-center'>
+                <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+                <p className='text-center mt-2'>Game Name Placeholder</p>
+            </Col>
+        </Row>
+
+        <Row className='mt-4'> 
+          <Col lg={12} className='justify-content-center  pupularHeading'>
+              <h1>New Realests</h1>
+          </Col>
+        </Row>
+        <Row className="mt-3">
+          <Col id='testbox' lg={2} className='justify-content-center'>
+            <img className='w-100 h-auto' src='https://i.pinimg.com/564x/b6/2e/b6/b62eb6f80aa4fc27f502f0b8c51ef8c6.jpg'></img>
               <p>Hello world</p>
           </Col>
           <Col id='testbox' lg={2} className='justify-content-center'>
-            <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+            <img className='w-100 h-auto' src='https://i.pinimg.com/564x/b6/2e/b6/b62eb6f80aa4fc27f502f0b8c51ef8c6.jpg'></img>
               <p>Hello world</p>
           </Col>
           <Col id='testbox' lg={2} className='justify-content-center'>
