@@ -1,7 +1,9 @@
 import React from 'react';
 import '../App'; 
 import 'bootstrap/dist/css/bootstrap.css';
-
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
 import { Carousel } from 'react-carousel-minimal';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -98,12 +100,58 @@ function Landing() {
           </div>
         </div>
 
+      <Container id='container1' className='mt-5'>
         <Row>
-          <Col lg={6} className='justify-content-centere'>
-            <h1>Hello worlds</h1>
-          
+          <Col id='testbox' lg={12} className='justify-content-center'>
+              <h1 className='headings'>Popular Games</h1>
           </Col>
         </Row>
+        <Row className='mt-3'>
+          <Col id='testbox' lg={2} className='justify-content-center'>
+              <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+              <p className='text-center mt-2'>Game Name Placeholder</p>
+          </Col>
+          <Col id='testbox' lg={2} className='justify-content-center'>
+              <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+              <p>Hello world</p>
+          </Col>
+          <Col id='testbox' lg={2} className='justify-content-center'>
+              <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+              <p>Hello world</p>
+          </Col>
+          <Col id='testbox' lg={2} className='justify-content-center'>
+              <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+              <p>Hello world</p>
+          </Col>
+          <Col id='testbox' lg={2} className='justify-content-center'>
+              <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+              <p>Hello world</p>
+          </Col>
+        </Row>
+
+        <Row className="mt-5">
+          <Col id='testbox' lg={2} className='justify-content-center'>
+            <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+              <p>Hello world</p>
+          </Col>
+          <Col id='testbox' lg={2} className='justify-content-center'>
+            <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+              <p>Hello world</p>
+          </Col>
+          <Col id='testbox' lg={2} className='justify-content-center'>
+            <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+              <p>Hello world</p>
+          </Col>
+          <Col id='testbox' lg={2} className='justify-content-center'>
+            <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+              <p>Hello world</p>
+          </Col>
+          <Col id='testbox' lg={2} className='justify-content-center'>
+            <img className='w-100 h-auto' src='https://i.pinimg.com/564x/83/e8/ad/83e8addf549ba7274e90cd192006ec95.jpg'></img>
+              <p>Hello world</p>
+          </Col>
+        </Row>
+      </Container>
       </>
         
 

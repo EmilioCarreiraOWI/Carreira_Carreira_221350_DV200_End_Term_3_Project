@@ -1,6 +1,7 @@
 
 .headings {
   font-family: Bungee Inline;
+  color: rgba(162, 99, 55, 1);
 }
 
 .normal-text {
@@ -90,4 +91,17 @@
   height: 475px;
   flex-shrink: 0;
   border: 3px solid #FFF;
+}
+
+#testbox{
+  height: auto;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#container1 {
+  border-radius: 50px;
+  border: 5px solid #000;
+  background: rgba(196, 196, 196, 0.10);
 }
