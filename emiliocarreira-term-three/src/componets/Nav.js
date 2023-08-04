@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 function BasicNav() {
 
     return(
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top text-light">
+        <nav class="navbar navbar-expand-lg navbar-light text-light">
             <div class="container">
                 <svg width="42" height="43" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="72" height="73" fill="#E5E5E5"/>

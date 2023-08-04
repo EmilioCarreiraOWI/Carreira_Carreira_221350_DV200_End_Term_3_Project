@@ -1,7 +1,9 @@
 import React from 'react';
 import '../App'; 
 import 'bootstrap/dist/css/bootstrap.css';
+
 import { Carousel } from 'react-carousel-minimal';
+import 'react-multi-carousel/lib/styles.css';
 
 const data = [{
           image: "https://cdn1.epicgames.com/rosemallow/offer/TOW_EGS_LandscapeProductImage_2560x1440-2560x1440-4f2adef2a0292ae2e3a91a7b6b076547.jpg",
@@ -54,10 +56,16 @@ const data = [{
         fontWeight: 'bold',
       }
 
+      const listOfData = [
+        // your data array here
+      ]
+      
+      
       
 
 function Landing() {
     return (
+      <>
         <div className="App">
           <div style={{ textAlign: "center" }}>
             <div>
@@ -89,6 +97,17 @@ function Landing() {
             </div>
           </div>
         </div>
+
+        <Row>
+          <Col lg={6} className='justify-content-centere'>
+            <h1>Hello worlds</h1>
+          
+          </Col>
+        </Row>
+      </>
+        
+
+
 
     );
   }

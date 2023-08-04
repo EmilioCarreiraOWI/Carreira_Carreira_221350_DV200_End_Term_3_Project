@@ -12,7 +12,9 @@
     "react-carousel-minimal": "^1.4.1",
     "react-dom": "^18.2.0",
     "react-items-carousel": "^2.8.0",
+    "react-multi-carousel": "^2.8.4",
     "react-scripts": "5.0.1",
+    "react-touch-carousel": "^0.10.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
