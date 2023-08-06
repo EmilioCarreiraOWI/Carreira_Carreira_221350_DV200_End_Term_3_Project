@@ -51,21 +51,15 @@
   letter-spacing: 2px;
 }
 
-.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
-  color: #fff;
-}
+
 
 .navbar-light .navbar-nav .nav-link {
   color: #fff;
 }
 
-.navbar-toggler {
-  background: #fff;
-}
 
-.navbar-nav {
-  text-align: center;
-}
+
+
 
 .nav-link {
   padding: .2rem 1rem;
@@ -112,6 +106,29 @@
   border: 5px solid #000;
   background: rgba(196, 196, 196, 0.10);
   margin-top: 100px;
+}
+#container2 {
+  border-radius: 50px;
+  height: auto;
+  padding-bottom: 30px;
+  border: 5px solid #000;
+  background: rgba(196, 196, 196, 0.10);
+  margin-top: 30px;
+}
+
+#topheading1 {
+  border-radius: 50px;
+  height: auto;
+  border: 5px solid #000;
+  background: rgba(162, 99, 55, 0.8);;
+  margin-top: 30px;
+  text-align: center;
+  font-family: Bungee Inline;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #000;
 }
 
 .pupularHeading {

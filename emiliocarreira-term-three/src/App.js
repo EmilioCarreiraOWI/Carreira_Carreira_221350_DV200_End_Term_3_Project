@@ -1,8 +1,8 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Landing from './pages/Landing.js';
-import Library from './pages/Library';
-import More from './pages/More';
+import Library from './pages/Library.js';
+import More from './pages/More.js';
 import BasicNav from './componets/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

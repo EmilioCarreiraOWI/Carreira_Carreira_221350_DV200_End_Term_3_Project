@@ -1,12 +1,13 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
+import Container from "react-bootstrap/esm/Container";
 
 
 function BasicNav() {
 
     return(
         <nav class="navbar navbar-expand-lg navbar-light text-light">
-            <div class="container">
+            <Container>
                 <svg width="42" height="43" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="72" height="73" fill="#E5E5E5"/>
                 <g id="Group 31">
@@ -44,14 +45,14 @@ function BasicNav() {
                             <a class="nav-link" href="./">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./More.js">More Games</a>
+                            <a class="nav-link" href="./pages/More.js">More Games</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./Library.js">Librery</a>
+                            <a class="nav-link" href="./pages/Library.js">Librery</a>
                         </li>
                     </ul>
                 </div>
-            </div>
+            </Container>
         </nav>
     )
 }

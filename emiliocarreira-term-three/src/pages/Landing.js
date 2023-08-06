@@ -68,7 +68,7 @@ function Landing() {
             <div>
               <Carousel
                 data={data}
-                time={3000}
+                time={2500}
                 width="950px"
                 height="600px"
                 captionStyle={captionStyle}
