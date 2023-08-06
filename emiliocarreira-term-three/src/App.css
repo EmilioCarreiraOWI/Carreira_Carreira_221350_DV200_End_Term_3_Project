@@ -51,15 +51,21 @@
   letter-spacing: 2px;
 }
 
-
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+  color: #fff;
+}
 
 .navbar-light .navbar-nav .nav-link {
   color: #fff;
 }
 
+.navbar-toggler {
+  background: #fff;
+}
 
-
-
+.navbar-nav {
+  text-align: center;
+}
 
 .nav-link {
   padding: .2rem 1rem;
