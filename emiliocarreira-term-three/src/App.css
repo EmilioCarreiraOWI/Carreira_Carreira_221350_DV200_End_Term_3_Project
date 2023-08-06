@@ -95,9 +95,14 @@
 
 #testbox{
   height: auto;
-  background-color: #fff;
+  color: #FFF;
   margin-left: auto;
   margin-right: auto;
+}
+
+.card-img {
+  padding: 5px;
+  background-color: rgba(162, 99, 55, 1);
 }
 
 #container1 {
@@ -113,7 +118,11 @@
   font-family: Bungee Inline;
   color: rgba(162, 99, 55, 1);
   height: auto;
-  
   margin-left: auto;
   margin-right: auto;
+}
+
+#testbox:hover {
+  background-color: rgba(162, 99, 55, 1);
+  color: #FFF;
 }
