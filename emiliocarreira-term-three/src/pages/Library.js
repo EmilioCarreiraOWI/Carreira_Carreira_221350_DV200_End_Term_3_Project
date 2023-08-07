@@ -11,7 +11,7 @@ function Library() {
         <Container id='topheading1'>
           <Row className='mt-3 mb-3'>
             <Col lg={12} className='justify-content-center'>
-                <h2>My Library</h2>
+                <h2>MY LIBRARY</h2>
             </Col>
           </Row>
         </Container>

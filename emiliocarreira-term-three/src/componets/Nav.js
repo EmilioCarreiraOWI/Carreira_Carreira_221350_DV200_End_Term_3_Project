@@ -50,6 +50,9 @@ function BasicNav() {
                         <li class="nav-item">
                             <a class="nav-link" href="./pages/Library.js">Librery</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/Cart.js">Cart</a>
+                        </li>
                     </ul>
                 </div>
             </Container>

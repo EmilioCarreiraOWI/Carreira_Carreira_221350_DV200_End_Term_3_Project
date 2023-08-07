@@ -63,6 +63,9 @@ const data = [{
 function Landing() {
     return (
       <>
+      <Container>
+
+      
         <div className="App">
           <div style={{ textAlign: "center" }}>
             <div>
@@ -94,7 +97,7 @@ function Landing() {
             </div>
           </div>
         </div>
-
+</Container>
       <Container id='container1'>
         <Row className='mt-3'>
           <Col lg={12} className='justify-content-center pupularHeading'>
