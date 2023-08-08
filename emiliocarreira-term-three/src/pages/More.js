@@ -110,6 +110,29 @@ function More() {
             </Col>
           </Row>
 
+          <Row className='mt-3'>
+            <Col id='testbox' lg={2} className='normal-text justify-content-center btn'>
+                <img className=' card-img w-100 h-auto' src='https://i.pinimg.com/564x/a9/12/73/a91273a55d6f4b9dea4a60f7b92cd533.jpg'></img>
+                <p className='text-center mt-2'>Game Name Placeholder</p>
+            </Col>
+            <Col id='testbox' lg={2} className='normal-text justify-content-center btn'>
+                <img className='card-img w-100 h-auto' src='https://i.pinimg.com/736x/60/51/1d/60511d3c833cc10aada357ee2a8790a0.jpg'></img>
+                <p className='text-center mt-2'>Game Name Placeholder</p>
+            </Col>
+            <Col id='testbox' lg={2} className='normal-text justify-content-center btn'>
+                <img className='card-img w-100 h-auto' src='https://i.pinimg.com/564x/19/5c/7f/195c7f34ed8609d177089897df0fc27b.jpg'></img>
+                <p className='text-center mt-2'>Game Name Placeholder</p>
+            </Col>
+            <Col id='testbox' lg={2} className='normal-text justify-content-center btn'>
+                <img className='card-img w-100 h-auto' src='https://i.pinimg.com/564x/de/ab/e8/deabe8f697b8fb26a5b9d09daaf73802.jpg'></img>
+                <p className='text-center mt-2'>Game Name Placeholder</p>
+            </Col>
+            <Col id='testbox' lg={2} className='normal-text justify-content-center btn'>
+                <img className='card-img w-100 h-auto' src='https://i.pinimg.com/564x/ae/f8/17/aef8176c33fa63d7aa68eb5a05318edc.jpg'></img>
+                <p className='text-center mt-2'>Game Name Placeholder</p>
+            </Col>
+          </Row>
+
         </Container>
       </>
     );
