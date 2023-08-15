@@ -7,6 +7,7 @@ import Cart from './pages/Cart.js';
 import BasicNav from './componets/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Indevidual from './pages/Indevidual';
+import BasicFooter from './componets/Footer';
 
 
 function App() {
@@ -22,7 +23,11 @@ function App() {
         <Route path='/pages/Cart.js' element= { <Cart/> } />
         <Route path='/pages/Indevidual.js' element= { <Indevidual/> } />
       </Routes>
+
+      <BasicFooter />
     </div>
+
+    
     
   );
 }
