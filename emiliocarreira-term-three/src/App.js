@@ -6,6 +6,7 @@ import More from './pages/More.js';
 import Cart from './pages/Cart.js';
 import BasicNav from './componets/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Indevidual from './pages/Indevidual';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/pages/More.js' element= { <More/> } />
         <Route path='/pages/Library.js' element= { <Library/> } />
         <Route path='/pages/Cart.js' element= { <Cart/> } />
+        <Route path='/pages/Indevidual.js' element= { <Indevidual/> } />
       </Routes>
     </div>
     
