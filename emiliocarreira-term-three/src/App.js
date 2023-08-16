@@ -1,13 +1,17 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Landing from './pages/Landing.js';
 import Library from './pages/Library.js';
 import More from './pages/More.js';
 import Cart from './pages/Cart.js';
 import BasicNav from './componets/Nav';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Indevidual from './pages/Indevidual';
 import BasicFooter from './componets/Footer';
+
+
 
 
 function App() {
@@ -15,14 +19,17 @@ function App() {
     <div>
 
       <BasicNav />
-
+    
+    
       <Routes>
-        <Route path='/' element= { <Landing/> } />
-        <Route path='/pages/More.js' element= { <More/> } />
-        <Route path='/pages/Library.js' element= { <Library/> } />
-        <Route path='/pages/Cart.js' element= { <Cart/> } />
-        <Route path='/pages/Indevidual.js' element= { <Indevidual/> } />
+        <Route exact path='/' element= { <Landing />} />
+        <Route path='/More.js' element= { <More/> } />
+        <Route path='/Library.js' element= { <Library/> } />
+        <Route path='/Cart.js' element= { <Cart/> } />
+        <Route path='/Indevidual.js' element= { <Indevidual/> } />
       </Routes>
+    
+      
 
       <BasicFooter />
     </div>

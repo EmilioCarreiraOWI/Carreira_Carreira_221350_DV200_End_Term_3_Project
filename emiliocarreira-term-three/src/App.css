@@ -2,6 +2,7 @@
 .headings {
   font-family: Bungee Inline;
   color: rgba(162, 99, 55, 1);
+  text-decoration: none;
 }
 
 .normal-text {

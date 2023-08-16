@@ -6,7 +6,7 @@ import Container from "react-bootstrap/esm/Container";
 function BasicNav() {
 
     return(
-        <nav class="bg-dark navbar navbar-expand-lg navbar-light text-light p-4 pb-0">
+        <nav class="bg-dark navbar navbar-expand-lg navbar-light text-light p-2 pb-0">
             <Container>
                 <svg width="42" height="43" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="72" height="73" fill="#E5E5E5"/>
@@ -17,7 +17,7 @@ function BasicNav() {
                 <mask id="path-2-inside-1_0_1" fill="white">
                 <path d="M-98 -31H1770.42V101H-98V-31Z"/>
                 </mask>
-                <path d="M-98 -31H1770.42V101H-98V-31Z" fill="#111111"/>
+                <path d="M-98 -31H1770.42V101H-98V-31Z" fill="#212529"/>
                 <path d="M1770.42 96H-98V106H1770.42V96Z" fill="white" mask="url(#path-2-inside-1_0_1)"/>
                 </g>
                 <g id="Group 26">
@@ -34,7 +34,7 @@ function BasicNav() {
                 </g>
                 </g>
                 </svg>
-            <a class="navbar-brand headings p-2" href="./">Game Cloud</a>
+            <a class="headings p-2" href="./"><h2>GAME CLOUD</h2></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
