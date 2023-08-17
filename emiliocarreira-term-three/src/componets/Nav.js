@@ -45,17 +45,26 @@ function BasicNav() {
                             <a class="nav-link" href="./">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./pages/More.js">More Games</a>
+                            <a class="nav-link" href="./More.js">More Games</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./pages/Library.js">Librery</a>
+                            <a class="nav-link" href="./Library.js">Librery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./pages/Cart.js">Cart</a>
+                            <a class="nav-link" href="./Cart.js">Cart</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./pages/Indevidual.js"></a>
+                            <a class="nav-link" href="./Indevidual.js"></a>
                         </li>
+                        
+                    </ul>
+                    
+                </div>
+                <div>
+                    <ul className="navbar-nav ml-auto headings justify-content-end">
+                       <li class="nav-item">
+                            <a class="nav-link" href="./Login.js">Login</a>
+                        </li> 
                     </ul>
                 </div>
             </Container>

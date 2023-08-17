@@ -10,6 +10,7 @@ import BasicNav from './componets/Nav';
 
 import Indevidual from './pages/Indevidual';
 import BasicFooter from './componets/Footer';
+import Login from './pages/Login';
 
 
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/Library.js' element= { <Library/> } />
         <Route path='/Cart.js' element= { <Cart/> } />
         <Route path='/Indevidual.js' element= { <Indevidual/> } />
+        <Route path='/Login.js' element= { <Login/> } />
       </Routes>
     
       
