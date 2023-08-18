@@ -68,13 +68,21 @@ function Landing() {
 
     const navigateToIndevidual = () => {
       // 👇️ navigate to /contacts
-      navigate('/pages/Indevidual.js');
+      navigate('/Indevidual.js');
     };
 
     
 
     return (
       <>
+      <Container id='topheading1'>
+          <Row className='mt-3 mb-3'>
+            <Col lg={12} className='justify-content-center'>
+                <h2>HOME</h2>
+            </Col>
+          </Row>
+        </Container>
+
       <Container>
 
       

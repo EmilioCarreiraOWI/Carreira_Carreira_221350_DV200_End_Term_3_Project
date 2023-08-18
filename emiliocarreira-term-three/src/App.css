@@ -161,3 +161,31 @@
   background-color: #000;
   
 }
+
+#svg-center{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#form-imput{
+  border: 3px solid rgba(162, 99, 55, 1);
+  font-family: Bungee;
+}
+
+#Form-btn-login{
+  border: 1px solid white;
+  font-family: Bungee;
+  background-color: rgba(162, 99, 55, 1);
+}
+#Form-btn-login:hover {
+  background-color: green;
+}
+#Form-btn-SignUp {
+  border: 1px solid white;
+  font-family: Bungee;
+  background-color: #2D2D2D;
+  margin-right: 8px;
+}
+#Form-btn-SignUp:hover {
+  background-color: rgba(162, 99, 55, 1);
+}

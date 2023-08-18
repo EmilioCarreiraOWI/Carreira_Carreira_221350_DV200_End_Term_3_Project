@@ -12,7 +12,7 @@ function Indevidual() {
 
     const navigateToCart = () => {
       // 👇️ navigate to /Cart
-      navigate('/pages/Cart.js');
+      navigate('/Cart.js');
     };
 
     return (
