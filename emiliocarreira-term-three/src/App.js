@@ -7,10 +7,10 @@ import Library from './pages/Library.js';
 import More from './pages/More.js';
 import Cart from './pages/Cart.js';
 import BasicNav from './componets/Nav';
-
 import Indevidual from './pages/Indevidual';
 import BasicFooter from './componets/Footer';
 import Login from './pages/Login';
+import SignUp from './pages/SignUp';
 
 
 
@@ -29,6 +29,7 @@ function App() {
         <Route path='/Cart.js' element= { <Cart/> } />
         <Route path='/Indevidual.js' element= { <Indevidual/> } />
         <Route path='/Login.js' element= { <Login/> } />
+        <Route path='/SignUp.js' element= { <SignUp/> } />
       </Routes>
     
       

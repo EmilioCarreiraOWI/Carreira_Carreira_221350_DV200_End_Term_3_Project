@@ -110,6 +110,7 @@
 .card-img {
   padding: 5px;
   background-color: rgba(162, 99, 55, 1);
+  object-fit: fill;
 }
 
 #container1 {

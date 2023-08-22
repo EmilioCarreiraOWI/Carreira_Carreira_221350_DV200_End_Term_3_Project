@@ -8,17 +8,17 @@ import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import {useNavigate} from 'react-router-dom';
 
-function Login() {
+function SignUp() {
 
     const navigate = useNavigate();
 
-    const navigateToLanding = () => {
+    const navigateToLogin = () => {
       // 👇️ navigate to /Cart
-      navigate('/');
+      navigate('/Login');
     };
-    const navigateToSignUp = () => {
+    const navigateToCancel = () => {
         // 👇️ navigate to /Cart
-        navigate('/SignUp.js');
+        navigate('/');
       };
 
     return (
@@ -28,15 +28,15 @@ function Login() {
         <Container id='topheading1'>
           <Row className='mt-3 mb-3'>
             <Col lg={12} className='justify-content-center'>
-                <h2>LOGIN</h2>
+                <h2>SIGN UP</h2>
             </Col>
           </Row>
         </Container>
 
         <Container id='container2'>
             <Row>
-            <Col md={3} className='mt-4'>
-                <svg id='svg-center' width="300" height="300" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <Col md={4} className='mt-4'>
+                <svg id='svg-center' width="350" height="350" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="72" height="73" fill="#E5E5E5"/>
                 <g id="Group 31">
                 <g id="Group 27">
@@ -63,25 +63,43 @@ function Login() {
                 </g>
                 </svg>
             </Col>
-            <Col sm={8} className='mt-4'>
+            <Col sm={7} className='mt-4'>
                 <Form >
+                <Row>
+                    <Col>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label className='headings'><h3>Name:</h3></Form.Label>
+                            <Form.Control id='form-imput' type="name" placeholder="Enter Name" />
+                        </Form.Group>
+                    </Col>
+                    <Col>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label className='headings'><h3>Surname:</h3></Form.Label>
+                            <Form.Control id='form-imput' type="surname" placeholder="Enter Surname" />
+                        </Form.Group>
+                    </Col>
+                        
+                    
+                </Row>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label className='headings'><h3>Email address:</h3></Form.Label>
-                        <Form.Control id='form-imput' type="email" placeholder="Enter email" />
+                        <Form.Control id='form-imput' type="email" placeholder="Create Email" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label className='headings'><h3>Password:</h3></Form.Label>
-                        <Form.Control id='form-imput'  type="password" placeholder="Enter Password" />
+                        <Form.Control id='form-imput'  type="password" placeholder="Create Password" />
                     </Form.Group>
+
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check className='headings' type="checkbox" label="Check me out" />
+                        <Form.Check className='headings' type="checkbox" label="Except the term of Agreement" />
                     </Form.Group>
-                    <Button onClick={navigateToSignUp} id='Form-btn-SignUp' variant="secondary" type="submit">
-                        Sign Up!
+
+                    <Button onClick={navigateToCancel} id='Form-btn-SignUp' variant="secondary" type="submit">
+                        Cancel?
                     </Button>
-                    <Button onClick={navigateToLanding} id='Form-btn-login' variant="primary" type="submit">
-                        Login
+                    <Button onClick={navigateToLogin} id='Form-btn-login' variant="primary" type="submit">
+                        Sign Up!
                     </Button>
                 </Form>
             </Col>
@@ -93,4 +111,4 @@ function Login() {
     )
     }
 
-    export default Login;
+    export default SignUp;

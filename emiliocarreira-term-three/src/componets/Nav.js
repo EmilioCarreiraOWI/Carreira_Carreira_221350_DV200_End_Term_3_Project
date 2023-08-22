@@ -62,9 +62,12 @@ function BasicNav() {
                 </div>
                 <div>
                     <ul className="navbar-nav ml-auto headings justify-content-end">
-                       <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="./Login.js">Login</a>
                         </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="./SignUp.js"></a>
+                        </li>
                     </ul>
                 </div>
             </Container>
