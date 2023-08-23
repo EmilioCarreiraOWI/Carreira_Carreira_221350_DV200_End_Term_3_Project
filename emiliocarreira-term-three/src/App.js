@@ -1,7 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import Landing from './pages/Landing.js';
 import Library from './pages/Library.js';
 import More from './pages/More.js';
@@ -11,6 +10,7 @@ import Indevidual from './pages/Indevidual';
 import BasicFooter from './componets/Footer';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import AddGame from './pages/AddGame';
 
 
 
@@ -18,7 +18,6 @@ import SignUp from './pages/SignUp';
 function App() {
   return (
     <div>
-
       <BasicNav />
     
     
@@ -30,6 +29,7 @@ function App() {
         <Route path='/Indevidual.js' element= { <Indevidual/> } />
         <Route path='/Login.js' element= { <Login/> } />
         <Route path='/SignUp.js' element= { <SignUp/> } />
+        <Route path='/AddGame.js' element= { <AddGame/> } />
       </Routes>
     
       
