@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/esm/Col';
 import { Link } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 
 
@@ -129,13 +130,23 @@ function AddGame() {
                     <Col>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label className='headings'><h3>catogory:</h3></Form.Label>
-                            <Form.Control onChange={(e=>setGamePrice(e.target.value))} id='form-imput' type="number" placeholder="R0.00" />
+                            <Dropdown >
+                                <Dropdown.Toggle className='btn' id="form-imput">
+                                    Select Category
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                                </Dropdown.Menu>
+                                </Dropdown>
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label className='headings'><h3>Game File:</h3></Form.Label>
-                            <Form.Control onChange={(e=>setGameImage(e.target.value))} id='form-imput'  type="image" placeholder="Create Password" />
+                            <Form.Control onChange={(e=>setGameImage(e.target.value))} id='form-imput'  type="file" placeholder="Create Password" />
                         </Form.Group>
                     </Col>
                 </Row>
