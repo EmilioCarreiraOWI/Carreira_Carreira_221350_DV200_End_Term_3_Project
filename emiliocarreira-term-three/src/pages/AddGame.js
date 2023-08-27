@@ -6,10 +6,11 @@ import Button from 'react-bootstrap/esm/Button';
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import Dropdown from 'react-bootstrap/Dropdown';
+
 
 
 
@@ -48,9 +49,24 @@ function AddGame() {
         .catch()
       })
 
-      const handleDelete=(id)=>{
-        axios.delete('http://localhost:5000/api/form/'+id)
-      }
+    //   const handleDelete=(id)=>{
+    //     axios.delete('http://localhost:5000/api/form/'+id)
+    //   }
+
+    const GameList = [
+        {
+          Title: "Books",
+          Id: "1"
+        },
+        {
+          Title: "Movies",
+          Id: "2"
+        },
+        {
+          Title: "Comics",
+          Id: "3"
+        }
+      ];
 
 
 
@@ -101,7 +117,7 @@ function AddGame() {
                 <Row>
                     <Col>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label className='headings'><h3>Product Name:</h3></Form.Label>
+                            <Form.Label className='headings'><h3>Game Name:</h3></Form.Label>
                             <Form.Control onChange={(e=>setGameName(e.target.value))} id='form-imput' type="productname" placeholder="Enter Game Name" />
                         </Form.Group>
                     </Col>
@@ -122,7 +138,7 @@ function AddGame() {
                     <Col>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label className='headings'><h3>Image:</h3></Form.Label>
-                            <Form.Control onChange={(e=>setGameImage(e.target.value))} id='form-imput'  type="image" placeholder="Create Password" />
+                            <Form.Control onChange={(e=>setGameImage(e.target.value))} id='form-imput'  type="file" placeholder="Create Password" />
                         </Form.Group>
                     </Col>
                 </Row>
@@ -136,11 +152,15 @@ function AddGame() {
                                 </Dropdown.Toggle>
 
                                 <Dropdown.Menu>
-                                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                                    <Dropdown.Item value="Action">Action Game</Dropdown.Item>
+                                    <Dropdown.Item value="Adventure">Adventure Game</Dropdown.Item>
+                                    <Dropdown.Item value="Anime">Anime Game</Dropdown.Item>
+                                    <Dropdown.Item value="Racing">Racing Game</Dropdown.Item>
+                                    <Dropdown.Item value="real-strategy">Real Strategy Game</Dropdown.Item>
+                                    <Dropdown.Item value="Open-World">Open world Game</Dropdown.Item>
+                                    <Dropdown.Item value="Horror">Horror Game</Dropdown.Item>
                                 </Dropdown.Menu>
-                                </Dropdown>
+                            </Dropdown>
                         </Form.Group>
                     </Col>
                     <Col>
@@ -164,17 +184,17 @@ function AddGame() {
         </Container>
 
         <Container id='container2'>
-            <table className='table mx-auto'>
+            <table className='table ml-auto mr-auto mt-3'>
                 <tbody>
-                    <th>Game Name</th>
-                    <th>Price</th>
-                    <th>Stock</th>
-                    <th>Category</th>
+                    <th className='headings'>Game Name:</th>
+                    <th className='headings'>Price:</th>
+                    <th className='headings'>Releast Date:</th>
+                    <th className='headings'>Category:</th>
                     {Game.map(Games=>{
                     <tr>
                         <td></td>
-                        <td><a class="btn" role="button">Delete</a></td>
-                        <td><a class="btn" onClick={handleDelete(Game._id)} role="button">Delete</a></td>
+                        {/* <td><a class="btn" role="button">Delete</a></td> */}
+                        {/* <td><a class="btn" onClick={handleDelete(Game._id)} role="button">Delete</a></td> */}
                         {/* <Link to={`/edit/${Game.id}`} className="btn btn-sm btn-success me-2">Update</Link> */}
                     </tr> 
                     })}
