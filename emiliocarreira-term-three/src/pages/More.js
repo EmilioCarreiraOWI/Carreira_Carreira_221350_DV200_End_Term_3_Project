@@ -29,6 +29,21 @@ const navigateToIndevidual = () => {
         </Container>
 
         <Container id='container2'>
+            <Row className='mt-3 mb-3'>
+                <Col lg={12} className='justify-content-center'>
+                    <h2 className='headings'>PAGE INFORMATION: </h2>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <p className='normal-text'>
+                        For this More page you will find all the games this website has to offer. Each Colum contains a image and a name, the colum react as a botton and the user will be able click on the culum. the button will navigate the user to the Indevidual Page. Feel free to select the indevidual games and enjoy your time interactiong with the game. 
+                    </p>
+                </Col>
+            </Row>
+        </Container>
+
+        <Container id='container2'>
 
           <Row className='mt-3'>
             <Col onClick={navigateToIndevidual} id='testbox' lg={2} className='normal-text justify-content-center btn'>

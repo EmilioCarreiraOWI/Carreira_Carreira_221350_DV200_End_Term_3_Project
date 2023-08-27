@@ -53,22 +53,6 @@ function AddGame() {
     //     axios.delete('http://localhost:5000/api/form/'+id)
     //   }
 
-    const GameList = [
-        {
-          Title: "Books",
-          Id: "1"
-        },
-        {
-          Title: "Movies",
-          Id: "2"
-        },
-        {
-          Title: "Comics",
-          Id: "3"
-        }
-      ];
-
-
 
     return (
 
@@ -145,22 +129,8 @@ function AddGame() {
                 <Row>
                     <Col>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label className='headings'><h3>catogory:</h3></Form.Label>
-                            <Dropdown >
-                                <Dropdown.Toggle className='btn' id="form-imput">
-                                    Select Category
-                                </Dropdown.Toggle>
-
-                                <Dropdown.Menu>
-                                    <Dropdown.Item value="Action">Action Game</Dropdown.Item>
-                                    <Dropdown.Item value="Adventure">Adventure Game</Dropdown.Item>
-                                    <Dropdown.Item value="Anime">Anime Game</Dropdown.Item>
-                                    <Dropdown.Item value="Racing">Racing Game</Dropdown.Item>
-                                    <Dropdown.Item value="real-strategy">Real Strategy Game</Dropdown.Item>
-                                    <Dropdown.Item value="Open-World">Open world Game</Dropdown.Item>
-                                    <Dropdown.Item value="Horror">Horror Game</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
+                            <Form.Label className='headings'><h3>Catogory:</h3></Form.Label>
+                            <Form.Control onChange={(e=>setGameImage(e.target.value))} id='form-imput'  type="text" placeholder="Enter Catogory" />
                         </Form.Group>
                     </Col>
                     <Col>
@@ -172,7 +142,7 @@ function AddGame() {
                 </Row>
                     
                     <Button onClick={navigateToCancel} id='Form-btn-SignUp' variant="secondary" type="submit">
-                        Cancel?
+                        Discart?
                     </Button>
                     <Button onClick={navigateToLogin} id='Form-btn-login' variant="primary" type="submit">
                         Create!
@@ -183,7 +153,16 @@ function AddGame() {
             
         </Container>
 
+        
+
         <Container id='container2'>
+            
+            <Row className='mt-3 mb-3'>
+                <Col lg={12} className='justify-content-center'>
+                    <h2 className='headings'>CREATED GAME</h2>
+                </Col>
+            </Row>
+            
             <table className='table ml-auto mr-auto mt-3'>
                 <tbody>
                     <th className='headings'>Game Name:</th>
