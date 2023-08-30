@@ -17,6 +17,21 @@ function Cart() {
             </Container>
 
             <Container id='container2'>
+            <Row className='mt-3 mb-3'>
+                <Col lg={12} className='justify-content-center'>
+                    <h2 className='headings'>PAGE INFORMATION: </h2>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <p className='normal-text'>
+                        Selected games you want to buy. The green button is for purcessing the game, it will automatecly be added to your Library page. The grey button is for removing the item from the cart if you dont want the game anymore
+                    </p>
+                </Col>
+            </Row>
+        </Container>
+
+            <Container id='container2'>
                 <Row className='mt-4'>
                     <Col lg={2}>
                         <img className='card-img w-100 h-auto' src='https://i.pinimg.com/236x/61/bf/73/61bf735782a9298796178aa7d3e8249b.jpg'></img>

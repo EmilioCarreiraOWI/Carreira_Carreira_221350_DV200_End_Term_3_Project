@@ -14,7 +14,7 @@ function SignUp() {
 
     const navigateToLogin = () => {
       // 👇️ navigate to /Cart
-      navigate('/Login');
+      navigate('/Login.js');
     };
     const navigateToCancel = () => {
         // 👇️ navigate to /Cart

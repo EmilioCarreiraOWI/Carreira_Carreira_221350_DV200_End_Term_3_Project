@@ -67,6 +67,21 @@ function AddGame() {
         </Container>
 
         <Container id='container2'>
+            <Row className='mt-3 mb-3'>
+                <Col lg={12} className='justify-content-center'>
+                    <h2 className='headings'>PAGE INFORMATION: </h2>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <p className='normal-text'>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </Col>
+            </Row>
+        </Container>
+
+        <Container id='container2'>
             <Row>
             <Col md={4} className='mt-4'>
                 <svg id='svg-center' width="350" height="350" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -165,10 +180,11 @@ function AddGame() {
             
             <table className='table ml-auto mr-auto mt-3'>
                 <tbody>
+                    <th className='headings'>Game Image:</th>
                     <th className='headings'>Game Name:</th>
-                    <th className='headings'>Price:</th>
-                    <th className='headings'>Releast Date:</th>
                     <th className='headings'>Category:</th>
+                    <th className='headings'>Releast Date:</th>
+                    <th className='headings'>Price:</th>
                     {Game.map(Games=>{
                     <tr>
                         <td></td>
