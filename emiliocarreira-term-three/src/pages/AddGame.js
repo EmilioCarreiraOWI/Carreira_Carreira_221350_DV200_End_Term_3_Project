@@ -135,8 +135,8 @@ function AddGame() {
                     </Col>
                     <Col>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label className='headings'><h3>Game File:</h3></Form.Label>
-                            <Form.Control onChange={(e=>setGameImage(e.target.value))} id='form-imput'  type="file" placeholder="Create Password" />
+                            <Form.Label className='headings'><h3>Game Information:</h3></Form.Label>
+                            <Form.Control onChange={(e=>setGameImage(e.target.value))} id='form-imput'  type="text" placeholder="Add Information" />
                         </Form.Group>
                     </Col>
                 </Row>
