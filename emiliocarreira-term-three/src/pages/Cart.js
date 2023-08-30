@@ -25,7 +25,7 @@ function Cart() {
             <Row>
                 <Col>
                     <p className='normal-text'>
-                        Selected games you want to buy. The green button is for purcessing the game, it will automatecly be added to your Library page. The grey button is for removing the item from the cart if you dont want the game anymore
+                        Selected games you want to buy. The green button is for purchasing the game, it will automatically be added to your Library page. The grey button is for removing the item from the cart if you do not want the game anymore
                     </p>
                 </Col>
             </Row>
