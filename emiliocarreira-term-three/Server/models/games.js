@@ -9,11 +9,19 @@ const GameSchema = mongoose.Schema({
         type: Number,
         required: true
     }, 
-    stock: {
-        type: Number, 
+    date: {
+        type: String, 
         required: true
     },
-    catogory: {
+    ganre: {
+        type: String, 
+        required: true
+    },
+    image: {
+        type: String, 
+        required: true
+    },
+    info: {
         type: String, 
         required: true
     }

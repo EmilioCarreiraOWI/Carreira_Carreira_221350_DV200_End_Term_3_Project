@@ -11,7 +11,7 @@ const GameList = () => {
         axios.get('http://localhost:5000/api/games')
         .then(result => setGame(result.data))
         .catch(err => console.log(err))
-    }, [game])
+    }, [])
 
     return(
         <Row>
