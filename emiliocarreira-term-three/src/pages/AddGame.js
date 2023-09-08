@@ -11,7 +11,7 @@ import Col from 'react-bootstrap/esm/Col';
 import axios from 'axios';
 // import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 // import GameCard from '../componets/CreatedCard';
-// import GameList from '../componets/CreatedCardList';
+import GameList from '../componets/GameList';
 
 
 
@@ -232,7 +232,7 @@ function AddGame() {
                 </Col>
             </Row>
             <Row>
-                {/* <GameList /> */}
+                <GameList />
             </Row>
             
             

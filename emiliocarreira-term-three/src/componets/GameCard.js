@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Button from "react-bootstrap/esm/Button";
 import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 
 const GameCard = ({ game }) => {
@@ -20,10 +21,13 @@ const GameCard = ({ game }) => {
             <MDBCardBody>
                 <MDBCardTitle>{game.name}</MDBCardTitle>
                 <MDBCardText>
-                <strong></strong>
+                <strong>Information: </strong><br /><p>{game.info}</p><br />
+                <strong>Releast Date: </strong><br /><p>{game.date}</p><br />
+                <strong>Game Ganre: </strong><br /><p>{game.ganre}</p><br />
+                <strong>Game Price: </strong><br /><p>{game.price}</p><br />
                 </MDBCardText>
                 <MDBCardText>
-                <small className='text-muted'>Last updated 3 mins ago</small>
+                <Button varient="danger" onClick={() => handleDelete(game._id)}>Delete</Button>
                 </MDBCardText>
             </MDBCardBody>
             </MDBCol>
