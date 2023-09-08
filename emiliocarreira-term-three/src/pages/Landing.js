@@ -10,6 +10,7 @@ import {useNavigate} from 'react-router-dom';
 // import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 // import DisplayIDs_10 from '../componets/10_IDS';
 // import DisplayIDs_5 from '../componets/5_IDS';
+import ClientList from '../componets/CLientList';
 import axios from 'axios';
 
 
@@ -167,6 +168,7 @@ function Landing() {
         </Row>
         <Row>
           <Col>
+            <ClientList />
             {/* <DisplayIDs_10 /> */}
           </Col>
         </Row>
