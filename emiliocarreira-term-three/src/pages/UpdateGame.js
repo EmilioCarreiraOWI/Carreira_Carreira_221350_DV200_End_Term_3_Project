@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
+import Container from 'react-bootstrap/esm/Container';
+import Row from 'react-bootstrap/esm/Row';
+import Col from 'react-bootstrap/esm/Col';
 
 function FormUpdate() {
 
@@ -16,16 +20,16 @@ function FormUpdate() {
 
     const [game, setGame] = useState([]);
     const [selected, setSelected] = useState({});
-    const navigate= useNavigate()
+    
 
     const style = {
         margin: "10px",
     }
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/form/'+id)
+        axios.get('http://localhost:5000/api/games/'+id)
             .then((res) => {
-                setGame(res.data)
+                setGame(res.data);
                 
             })
             .catch()
@@ -36,46 +40,99 @@ function FormUpdate() {
         let payload = { name: Name, price: Price, date: Date, ganre: Ganre, image: Image, info: Info }
         axios.patch('http://localhost:5000/api/games/'+id, payload)
         .then(res=>{
-            console.log('userEditSuccessfully')
-            navigate('/AddGame')
+            console.log('userEditSuccessfully');
+            
         })
     }
 
     return (
 
-        <div style={{ border: "2px black solid", margin: 'auto', borderRadius: '5px', width: "50%" }} className="container">
-            <form onSubmit={update}>
-                <div className="form">
-                    <h1 style={{ color: "black" }} >Products</h1>
-                    <div >
-                        <input style={style}
-                            type="text"
-                            placeholder= {game.name}
-                            onChange={(e => setName(e.target.value))}
-                        />
-                        <input style={style}
-                            type="number"
-                            placeholder={game.price}
-                            onChange={(e => setPrice(e.target.value))}
-                        />
-                        <input style={style}
-                            type="number"
-                            placeholder={game.stock}
-                            onChange={(e => setDate(e.target.value))}
-                        />
-                        <input style={style}
-                            type="text"
-                            placeholder={game.category}
-                            onChange={(e => setGanre(e.target.value))}
-                        />
-                        
-                        <button onClick={e=>update(e)} style={style}>Update Game</button>
-                        <button style={style}>Delete Game</button>
-                    </div>
-                </div>
-            </form>
+        
+            
+                
+        <>
+        <Container id='topheading1'>
+          <Row className='mt-3 mb-3'>
+            <Col lg={12} className='justify-content-center'>
+                <h2>UPDATE GAME: {game.name}</h2>
+            </Col>
+          </Row>
+        </Container>
 
-        </div>
+            <form onSubmit={update}>
+                <Container id='container2'>
+                    <MDBCard id="testbox2" className="mb-4 mt-4" >
+                    <MDBRow className='g-0'>
+                        <MDBCol md='4'>
+                        <MDBCardImage src={game.image} alt={game.image} fluid />
+                        </MDBCol>
+                        <MDBCol md='8'>
+                        <MDBCardBody>
+                            <MDBCardText>
+                            <strong className="headings">Game Name: </strong><br />
+                            <input style={style}
+                                type="text"
+                                placeholder= {game.name}
+                                onChange={(e => setName(e.target.value))}
+                            />
+                            <br />
+                            <strong className="headings">Information: </strong><br />
+                            <input style={style}
+                                type="text"
+                                placeholder={game.info}
+                                onChange={(e => setInfo(e.target.value))}
+                            />
+                            <br />
+                            
+                            <strong className="headings">Game Price: </strong><br />
+                            <input style={style}
+                                type="number"
+                                placeholder={game.price}
+                                onChange={(e => setPrice(e.target.value))}
+                            />
+                            <br />
+
+                            <strong className="headings">Releast Date: </strong><br />
+                            <input style={style}
+                                type="number"
+                                placeholder={game.date}
+                                onChange={(e => setDate(e.target.value))}
+                            />
+                            <br />
+
+
+                            <strong className="headings">Game Ganre: </strong><br />
+                            <input style={style}
+                                type="text"
+                                placeholder={game.ganre}
+                                onChange={(e => setGanre(e.target.value))}
+                            />
+                            <br />
+
+
+                            <strong className="headings">Game Image URL: </strong><br />
+                            <input style={style}
+                                type="text"
+                                placeholder={game.image}
+                                onChange={(e => setImage(e.target.value))}
+                            />
+                            <br />
+
+                            </MDBCardText>
+                            <MDBCardText >
+                            <button onClick={e=>update(e)} style={style}>Update Game</button>
+                            <button style={style}>Delete Game</button>
+                            </MDBCardText>
+                        </MDBCardBody>
+                        </MDBCol>
+                    </MDBRow>
+                </MDBCard>
+                </Container>
+            </form>
+        </>    
+          
+        
+    
     );
 }
 
