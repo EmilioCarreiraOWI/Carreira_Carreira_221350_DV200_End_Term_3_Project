@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
-import { useNavigate, useParams } from "react-router-dom";
-import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
+import { useParams } from "react-router-dom";
+import { MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
@@ -19,7 +19,7 @@ function FormUpdate() {
     const {id}=useParams()
 
     const [game, setGame] = useState([]);
-    const [selected, setSelected] = useState({});
+    
     
 
     const style = {
@@ -70,14 +70,14 @@ function FormUpdate() {
                         <MDBCardBody>
                             <MDBCardText>
                             <strong className="headings">Game Name: </strong><br />
-                            <input style={style}
+                            <input className='form-input2'
                                 type="text"
                                 placeholder= {game.name}
                                 onChange={(e => setName(e.target.value))}
                             />
                             <br />
                             <strong className="headings">Information: </strong><br />
-                            <input style={style}
+                            <input className='form-input2'
                                 type="text"
                                 placeholder={game.info}
                                 onChange={(e => setInfo(e.target.value))}
@@ -85,7 +85,7 @@ function FormUpdate() {
                             <br />
                             
                             <strong className="headings">Game Price: </strong><br />
-                            <input style={style}
+                            <input className='form-input2'
                                 type="number"
                                 placeholder={game.price}
                                 onChange={(e => setPrice(e.target.value))}
@@ -93,7 +93,7 @@ function FormUpdate() {
                             <br />
 
                             <strong className="headings">Releast Date: </strong><br />
-                            <input style={style}
+                            <input className='form-input2'
                                 type="number"
                                 placeholder={game.date}
                                 onChange={(e => setDate(e.target.value))}
@@ -102,7 +102,7 @@ function FormUpdate() {
 
 
                             <strong className="headings">Game Ganre: </strong><br />
-                            <input style={style}
+                            <input className='form-input2'
                                 type="text"
                                 placeholder={game.ganre}
                                 onChange={(e => setGanre(e.target.value))}
@@ -111,7 +111,7 @@ function FormUpdate() {
 
 
                             <strong className="headings">Game Image URL: </strong><br />
-                            <input style={style}
+                            <input className='form-input2'
                                 type="text"
                                 placeholder={game.image}
                                 onChange={(e => setImage(e.target.value))}
@@ -119,12 +119,15 @@ function FormUpdate() {
                             <br />
 
                             </MDBCardText>
-                            <MDBCardText >
-                            <button onClick={e=>update(e)} style={style}>Update Game</button>
-                            <button style={style}>Delete Game</button>
-                            </MDBCardText>
+                            
+                            <MDBCol>
+                                <button >Delete Game</button>
+                                <button className='mx-2' onClick={e=>update(e)}>Update Game</button>
+                            </MDBCol> 
+                            
                         </MDBCardBody>
                         </MDBCol>
+                        
                     </MDBRow>
                 </MDBCard>
                 </Container>
