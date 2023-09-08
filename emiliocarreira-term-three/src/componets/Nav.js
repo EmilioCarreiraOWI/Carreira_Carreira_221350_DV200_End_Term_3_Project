@@ -1,9 +1,15 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import Container from "react-bootstrap/esm/Container";
+import Button from "react-bootstrap/esm/Button";
 
 
 function BasicNav() {
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        window.location.reload();
+    }
 
     return(
         <nav class="bg-dark navbar navbar-expand-lg navbar-light text-light p-2 pb-0">
@@ -56,18 +62,17 @@ function BasicNav() {
                         <li class="nav-item">
                             <a class="nav-link" href="./Indevidual.js"></a>
                         </li>
-                        
                     </ul>
                     
                 </div>
                 <div>
                     <ul className="navbar-nav ml-auto headings justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link" href="./Login.js">Login</a>
+                            <Button id='Form-btn-SignUp' onClick={handleLogout}>
+                                Logout
+                            </Button>
                         </li> 
-                        <li class="nav-item">
-                            <a class="nav-link" href="./SignUp.js"></a>
-                        </li>
+                        
                     </ul>
                 </div>
             </Container>

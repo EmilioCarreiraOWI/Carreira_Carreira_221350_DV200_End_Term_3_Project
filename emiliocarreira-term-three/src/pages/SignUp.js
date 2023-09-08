@@ -7,19 +7,50 @@ import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import {useNavigate} from 'react-router-dom';
+import { useState } from 'react';
+import axios from 'axios';
 
 function SignUp() {
 
     const navigate = useNavigate();
 
-    const navigateToLogin = () => {
-      // 👇️ navigate to /Cart
-      navigate('/Login.js');
-    };
+    
     const navigateToCancel = () => {
         // 👇️ navigate to /Cart
         navigate('/');
       };
+
+        const [data, setData] = useState({
+            firstName: "",
+            lastName: "",
+            email: "",
+            password: "",
+        })
+
+    const [error, setError] = useState()
+    const handleChange = ({ currentTarget: input }) => {
+        setData({...data, [input.name]: input.value}); 
+    };
+
+    const handleSubmit = async (e) => {
+        e.provent.defult();
+        try {
+            const url = "http://localhost:5000/api/user";
+            const { data: res } = await axios.post(url,data);
+            navigate("/login")
+            console.log (res.message);
+
+        } catch (error) {
+            if (error.response && 
+                error.response.status >= 400 &&
+                error.response.status <= 500) {
+                    setError(error.response.data.message)
+                }
+        }
+    };
+    
+        
+    
 
     return (
 
@@ -28,7 +59,7 @@ function SignUp() {
         <Container id='topheading1'>
           <Row className='mt-3 mb-3'>
             <Col lg={12} className='justify-content-center'>
-                <h2>SIGN UP</h2>
+                <h2>CREATE ACCOUNT</h2>
             </Col>
           </Row>
         </Container>
@@ -64,18 +95,32 @@ function SignUp() {
                 </svg>
             </Col>
             <Col sm={7} className='mt-4'>
-                <Form >
+                <Form onSubmit={handleSubmit}>
                 <Row>
                     <Col>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Label className='headings'><h3>Name:</h3></Form.Label>
-                            <Form.Control id='form-imput' type="name" placeholder="Enter Name" />
+                            <Form.Control className="form-input" 
+                                type="text" 
+                                placeholder="Enter Name" 
+                                name="firstName"
+                                onChange={handleChange}
+                                value={data.firstName}
+                                required
+                            />
                         </Form.Group>
                     </Col>
                     <Col>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Group className="mb-3" controlId="formBasicLastName">
                             <Form.Label className='headings'><h3>Surname:</h3></Form.Label>
-                            <Form.Control id='form-imput' type="surname" placeholder="Enter Surname" />
+                            <Form.Control className='form-input' 
+                            type="text" 
+                            placeholder="Enter Surname" 
+                            name="lastName"
+                            onChange={handleChange}
+                            value={data.lastName}
+                            required
+                        />
                         </Form.Group>
                     </Col>
                         
@@ -83,22 +128,38 @@ function SignUp() {
                 </Row>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label className='headings'><h3>Email address:</h3></Form.Label>
-                        <Form.Control id='form-imput' type="email" placeholder="Create Email" />
+                        <Form.Control className='form-input' 
+                            type="email" 
+                            placeholder="Create Email" 
+                            name="email"
+                            onChange={handleChange}
+                            value={data.email}
+                            required
+                        />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label className='headings'><h3>Password:</h3></Form.Label>
-                        <Form.Control id='form-imput'  type="password" placeholder="Create Password" />
+                        <Form.Control className='form-input' 
+                            type="password" 
+                            placeholder="Create Password" 
+                            name="password"
+                            onChange={handleChange}
+                            value={data.password}
+                            required
+                        />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check className='headings' type="checkbox" label="Except the term of Agreement" />
                     </Form.Group>
 
+                        {error && <div className='error_msg'>{error}</div>}
+
                     <Button onClick={navigateToCancel} id='Form-btn-SignUp' variant="secondary" type="submit">
                         Cancel?
                     </Button>
-                    <Button onClick={navigateToLogin} id='Form-btn-login' variant="primary" type="submit">
+                    <Button id='Form-btn-login' variant="primary" type="submit">
                         Sign Up!
                     </Button>
                 </Form>

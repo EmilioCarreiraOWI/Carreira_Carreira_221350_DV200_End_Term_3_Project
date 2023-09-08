@@ -7,6 +7,8 @@ import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import {useNavigate} from 'react-router-dom';
+import axios from 'axios';
+import { useState } from 'react';
 
 function Login() {
 
@@ -20,6 +22,34 @@ function Login() {
         // 👇️ navigate to /Cart
         navigate('/SignUp.js');
       };
+
+      const [data, setData] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: ""
+        })
+
+        const [error, setError] = useState()
+        const handleChange = ({ currentTarget: input }) => {
+            setData({...data, [input.name]: input.value}); 
+        };
+
+        const handleSubmit = async (e) => {
+            e.provent.defult();
+            try {
+                const url = "http://localhost:5000/api/auth";
+                const { data: res } = await axios.post(url,data);
+                localStorage.setItem("token", res.data);
+                window.location = "/"
+            } catch (error) {
+                if (error.response && 
+                    error.response.status >= 400 &&
+                    error.response.status <= 500) {
+                        setError(error.response.data.message)
+                    }
+            }
+        };
 
     return (
 
@@ -64,19 +94,36 @@ function Login() {
                 </svg>
             </Col>
             <Col sm={8} className='mt-4'>
-                <Form >
+                <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label className='headings'><h3>Email address:</h3></Form.Label>
-                        <Form.Control id='form-imput' type="email" placeholder="Enter email" />
+                        <Form.Control id='form-imput' 
+                        type="email" 
+                        placeholder="Enter email" 
+                        name="email"
+                        onChange={handleChange}
+                        value={data.email}
+                        required
+                        />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label className='headings'><h3>Password:</h3></Form.Label>
-                        <Form.Control id='form-imput'  type="password" placeholder="Enter Password" />
+                        <Form.Control id='form-imput' 
+                        type="password" 
+                        placeholder="Enter Password" 
+                        name="password"
+                        onChange={handleChange}
+                        value={data.password}
+                        required
+                        />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check className='headings' type="checkbox" label="Check me out" />
                     </Form.Group>
+
+                    {error && <div className='error_msg'>{error}</div>}
+
                     <Button onClick={navigateToSignUp} id='Form-btn-SignUp' variant="secondary" type="submit">
                         Sign Up!
                     </Button>

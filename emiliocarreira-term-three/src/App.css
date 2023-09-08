@@ -102,6 +102,16 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+#testbox2{
+  height: auto;
+  color: #FFF;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #2d2d2dbb;
+  border: 3px solid rgba(162, 99, 55, 1);
+}
+
 #Indevidual {
   margin-left: auto;
   margin-right: auto;
@@ -153,6 +163,10 @@
   margin-right: auto;
 }
 
+#testbox2:hover {
+  border: 3px solid #198754;
+}
+
 #testbox:hover {
   background-color: rgba(162, 99, 55, 1);
   color: #FFF;
@@ -168,9 +182,20 @@
   margin-right: auto;
 }
 
-#form-imput{
+.form-input{
   border: 3px solid rgba(162, 99, 55, 1);
   font-family: Bungee;
+  padding: 5px;
+  border-radius: 5px;
+}
+.form-input2 {
+  border: 3px solid rgba(162, 99, 55, 1);
+  font-family: Bungee;
+  padding: 7px;
+  border-radius: 5px;
+  width: 700px;
+  height: auto;
+  margin-bottom: 9px;
 }
 
 #Form-btn-login{
@@ -189,4 +214,15 @@
 }
 #Form-btn-SignUp:hover {
   background-color: rgba(162, 99, 55, 1);
+}
+
+.error_msg {
+  width: 370px;
+  padding: 15px;
+  margin: 5px o;
+  font-size: 14px;
+  background-color: #f34646;
+  color: #FFF;
+  border-radius: 5px;
+  text-align: center;
 }

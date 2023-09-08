@@ -1,19 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App'; 
 import 'bootstrap/dist/css/bootstrap.css';
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
-import {useNavigate} from 'react-router-dom';
+
 
 function Indevidual() {
 
-    const navigate = useNavigate();
-
-    const navigateToCart = () => {
-      // 👇️ navigate to /Cart
-      navigate('/Cart.js');
-    };
+    
+    
+    const [info, setInfo] = useState('');
+    const selectedID = localStorage.getItem('selectedID'); // Retrieve the selected ID from local storage
+  
+    useEffect(() => {
+      // Assuming you have an API endpoint to fetch information based on the selected ID
+      // Replace 'fetchInfo' with your actual data-fetching logic
+      async function fetchInfo() {
+        try {
+          const response = await fetch('http://localhost:5000/api/games/'+{selectedID});
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          const data = await response.json();
+          setInfo(data); // Update the state with the fetched information
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      }
+  
+      if (selectedID) {
+        fetchInfo();
+      }
+    }, [selectedID]);
+    
 
     return (
         <>
@@ -29,12 +49,15 @@ function Indevidual() {
             <Container id='container2'>
                 <Row className='mt-4'>
                     <Col lg={3} id='Indevidual'>
-                        <img className='card-img w-100 h-auto' src='https://i.pinimg.com/236x/61/bf/73/61bf735782a9298796178aa7d3e8249b.jpg'></img>
+                        <img className='card-img w-100 h-auto' src={info.Image} alt='...'></img>
                     </Col>
                     <Col lg={8} className='text-white' id='Indevidual'>
-                        <h3>Game Name</h3>
-                        <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <button className='btn btn-success' onClick={navigateToCart}>Add To Cart</button>
+                        <h3>{info.Name}</h3>
+                        <strong className="headings">Info:</strong> <p>{info.Info}</p>
+                        <strong className="headings">Price:</strong> <p>{info.Price}</p>
+                        <strong className="headings">Ganre:</strong> <p>{info.Ganre}</p>
+                        <strong className="headings">Date:</strong> <p>{info.Date}</p>
+                        <button className='btn btn-success'>Add To Cart</button>
                     </Col>
                 </Row>
             </Container>

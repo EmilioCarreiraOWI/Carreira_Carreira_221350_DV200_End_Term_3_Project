@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../App'; 
 import 'bootstrap/dist/css/bootstrap.css';
 import Form from 'react-bootstrap/esm/Form';
@@ -7,51 +7,72 @@ import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 // import { Link } from 'react-router-dom';
-import {useNavigate} from 'react-router-dom';
+// import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
-import Dropdown from 'react-bootstrap/Dropdown';
+// import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
+// import GameCard from '../componets/CreatedCard';
+// import GameList from '../componets/CreatedCardList';
 
 
 
 
 function AddGame() {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    const navigateToLogin = () => {
-      // 👇️ navigate to /Cart
-      navigate('/Login');
-    };
-    const navigateToCancel = () => {
-        // 👇️ navigate to /Cart
-        navigate('/');
+    // const navigateToLogin = () => {
+    //   // 👇️ navigate to /Cart
+    //   navigate('/Login');
+    // };
+    // const navigateToCancel = () => {
+    //     // 👇️ navigate to /Cart
+    //     navigate('/');
+    //   };
+
+    const [name, setName] = useState();
+    const [date, setDate] = useState();
+    const [price, setPrice] = useState();
+    const [image, setImage] = useState();
+    const [info, setInfo] = useState();
+    const [ganre, setGanre] = useState();
+
+    
+
+    // const [Game, setGames] = useState([]);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+      
+        const payload = {
+          name: name,
+          date: date,
+          price: price,
+          image: image,
+          ganre: ganre,
+          info: info,
+        };
+        console.log(payload)
+        try {
+          const response = await axios.post('http://localhost:5000/api/games', payload);
+          console.log('Game data submitted:', response.data);
+        } catch (error) {
+          console.error('Error submitting Game data:', error);
+        }
       };
+      
 
-    const [GameName, setGameName] = useState();
-    const [GameDate, setGameDate] = useState();
-    const [GamePrice, setGamePrice] = useState();
-    const [GameImage, setGameImage] = useState();
+    //   useEffect(()=>{
+    //     axios.get('http://localhost:5000/api/form/')
+    //     .then((res)=>{
+    //        setGames(res.data)
+    //     })
+    //     .catch()
+    //   })
 
-    const [Game, setGames] = useState([]);
-
-      const addGame = (e) => {
-        let payload={name: GameName, date: GameDate, price: GamePrice, image: GameImage}
-        axios.post('http://localhost:5000/api/from', payload)
-        .then()
-        .catch()
-      }
-
-      useEffect(()=>{
-        axios.get('http://localhost:5000/api/form/')
-        .then((res)=>{
-           setGames(res.data)
-        })
-        .catch()
-      })
-
-    //   const handleDelete=(id)=>{
-    //     axios.delete('http://localhost:5000/api/form/'+id)
-    //   }
+    // //   const handleDelete=(id)=>{
+    // //     axios.delete('http://localhost:5000/api/form/'+id)
+    // //   }
+    
 
 
     return (
@@ -75,7 +96,7 @@ function AddGame() {
             <Row>
                 <Col>
                     <p className='normal-text'>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    The Add Game page is for the developers only. The developer can upload a new game to the server with the form below. The state needs the following information: Game Name, Release Date, Price, Game Image URL, Game Ganre, and Game Information. After creating the new game the game will appear at the bottom of the list of the completed Games.
                     </p>
                 </Col>
             </Row>
@@ -112,18 +133,31 @@ function AddGame() {
                 </svg>
             </Col>
             <Col sm={7} className='mt-4'>
-                <Form onSubmit={addGame}>
+                <Form onSubmit={handleSubmit}>
                 <Row>
                     <Col>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label className='headings'><h3>Game Name:</h3></Form.Label>
-                            <Form.Control onChange={(e=>setGameName(e.target.value))} id='form-imput' type="productname" placeholder="Enter Game Name" />
+                            <Form.Control  class='form-input' 
+                                type="text" 
+                                name='name'
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                placeholder="Enter Game Name" 
+
+                            />
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label className='headings'><h3>Releast Date:</h3></Form.Label>
-                            <Form.Control onChange={(e=>setGameDate(e.target.value))} id='form-imput' type="date" placeholder="Enter Surname" />
+                            <Form.Control  class='form-input' 
+                                type="date" 
+                                name='date'
+                                value={date}
+                                onChange={(e) => setDate(e.target.value)}
+                                placeholder="Enter Surname" 
+                            />
                         </Form.Group>
                     </Col>
                 </Row>
@@ -131,35 +165,55 @@ function AddGame() {
                     <Col>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label className='headings'><h3>Price:</h3></Form.Label>
-                            <Form.Control onChange={(e=>setGamePrice(e.target.value))} id='form-imput' type="number" placeholder="R0.00" />
+                            <Form.Control  class='form-input' 
+                            type="number" 
+                            name='price'
+                            value={price}
+                            onChange={(e) => setPrice(e.target.value)}
+                            placeholder="R0.00" />
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label className='headings'><h3>Image:</h3></Form.Label>
-                            <Form.Control onChange={(e=>setGameImage(e.target.value))} id='form-imput'  type="file" placeholder="Create Password" />
+                            <Form.Control  class='form-input' 
+                            type="text" 
+                            name='image'
+                            value={image}
+                            onChange={(e) => setImage(e.target.value)}
+                            placeholder="Add Image URL" />
                         </Form.Group>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label className='headings'><h3>Catogory:</h3></Form.Label>
-                            <Form.Control onChange={(e=>setGameImage(e.target.value))} id='form-imput'  type="text" placeholder="Enter Catogory" />
+                            <Form.Label className='headings'><h3>Ganre:</h3></Form.Label>
+                            <Form.Control  class='form-input' 
+                            type="text" 
+                            name='ganre'
+                            value={ganre}
+                            onChange={(e) => setGanre(e.target.value)}
+                            placeholder="Enter Catogory" />
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label className='headings'><h3>Game Information:</h3></Form.Label>
-                            <Form.Control onChange={(e=>setGameImage(e.target.value))} id='form-imput'  type="text" placeholder="Add Information" />
+                            <Form.Control  class='form-input' 
+                            type="text" 
+                            name='info'
+                            value={info}
+                            onChange={(e) => setInfo(e.target.value)}
+                            placeholder="Add Information" />
                         </Form.Group>
                     </Col>
                 </Row>
                     
-                    <Button onClick={navigateToCancel} id='Form-btn-SignUp' variant="secondary" type="submit">
+                    <Button  id='Form-btn-SignUp' variant="secondary" >
                         Discart?
                     </Button>
-                    <Button onClick={navigateToLogin} id='Form-btn-login' variant="primary" type="submit">
+                    <Button  id='Form-btn-login' variant="primary" type="submit">
                         Create!
                     </Button>
                 </Form>
@@ -174,29 +228,14 @@ function AddGame() {
             
             <Row className='mt-3 mb-3'>
                 <Col lg={12} className='justify-content-center'>
-                    <h2 className='headings'>CREATED GAME</h2>
+                    <h2 className='headings'>CREATED GAME:</h2>
                 </Col>
             </Row>
+            <Row>
+                <GameList />
+            </Row>
             
-            <table className='table ml-auto mr-auto mt-3'>
-                <tbody>
-                    <th className='headings'>Game Image:</th>
-                    <th className='headings'>Game Name:</th>
-                    <th className='headings'>Category:</th>
-                    <th className='headings'>Releast Date:</th>
-                    <th className='headings'>Price:</th>
-                    {Game.map(Games=>{
-                    <tr>
-                        <td></td>
-                        {/* <td><a class="btn" role="button">Delete</a></td> */}
-                        {/* <td><a class="btn" onClick={handleDelete(Game._id)} role="button">Delete</a></td> */}
-                        {/* <Link to={`/edit/${Game.id}`} className="btn btn-sm btn-success me-2">Update</Link> */}
-                    </tr> 
-                    })}
-                    
-                </tbody>
-
-            </table>
+            
         </Container>
         
     </>
