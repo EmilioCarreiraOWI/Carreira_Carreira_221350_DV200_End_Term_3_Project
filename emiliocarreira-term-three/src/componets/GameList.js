@@ -14,7 +14,7 @@ const GameList = () => {
     }, [])
 
     return(
-        <Row>
+        <Row className="mx-auto">
             {game.map((game) => (
                 <GameCard key={game._id} id={game._id} game={game} />
             ))}
