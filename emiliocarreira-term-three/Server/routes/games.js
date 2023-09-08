@@ -1,25 +1,25 @@
 const express = require('express')
 
-const MusicSchema = require('../models/games')
+const GameSchema = require('../models/games')
 
 const router = express();
 
 //Get All
 router.get('/api/games/', async (req, res) => {
-    const findMusic = await MusicSchema.find();
-    res.json(findMusic)
+    const findGame = await GameSchema.find();
+    res.json(findGame)
 })
 
 //Get Single
 router.get('/api/games/:id', async (req, res) => {
-    const findMusic = await MusicSchema.findById(req.params.id);
-    res.json(findMusic)
+    const findGame = await GameSchema.findById(req.params.id);
+    res.json(findGame)
 })
 
 //Update
 router.put('/api/games/:id', async (req, res) => {
     const { id } = req.params.id
-    await MusicSchema.updateOne({id} , req.body)
+    await GameSchema.updateOne({id} , req.body)
         .then(response => res.json(response))
         .catch(error => res.status(500).json(error))
 })
@@ -27,8 +27,8 @@ router.put('/api/games/:id', async (req, res) => {
 
 //Create
 router.post('/api/games', async (req, res) => {
-    const music = new MusicSchema({ ...req.body });
-    await music.save()
+    const game = new GameSchema({ ...req.body });
+    await game.save()
         .then(response => res.json(response))
         .catch(error => res.status(500).json(error))
 })
@@ -36,7 +36,7 @@ router.post('/api/games', async (req, res) => {
 //Delete
 router.delete('/api/games/:id', async (req, res) => {
     const { id } = req.params.id
-    await MusicSchema.findByIdAndDelete(req.params.id)
+    await GameSchema.findByIdAndDelete(req.params.id)
         .then(response => res.json(response))
         .catch(error => res.status(500).json(error))
 })

@@ -53,7 +53,7 @@ function AddGame() {
         };
         console.log(payload)
         try {
-          const response = await axios.post('http://localhost:5000/api/games', payload);
+          const response = await axios.post('http://localhost:5000/api/games/', payload);
           console.log('Game data submitted:', response.data);
         } catch (error) {
           console.error('Error submitting Game data:', error);
