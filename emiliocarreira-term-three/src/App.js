@@ -11,7 +11,7 @@ import BasicFooter from './componets/Footer';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import AddGame from './pages/AddGame';
-// import FormUpdate from './componets/update';
+import FormUpdate from './pages/UpdateGame';
 
 
 
@@ -37,7 +37,7 @@ function App() {
         <Route path='/Login.js' element= { <Login/> } />
         <Route path='/SignUp.js' element= { <SignUp/> } />
         <Route path='/AddGame.js' element= { <AddGame/> } />
-        {/* <Route path='/update/:id' element={<FormUpdate />} /> */}
+        <Route path='/update/:id' element={<FormUpdate />} />
 
         
         

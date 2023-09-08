@@ -6,16 +6,16 @@ function FormUpdate() {
 
     const [Name, setName] = useState();
     const [Price, setPrice] = useState();
-    const [date, setDate] = useState();
-    const [image, setImage] = useState();
-    const [ganre, setGanre] = useState();
-    const [info, setInfo] = useState();
+    const [Date, setDate] = useState();
+    const [Image, setImage] = useState();
+    const [Ganre, setGanre] = useState();
+    const [Info, setInfo] = useState();
     
     
     const {id}=useParams()
 
-    const [products, setProducts] = useState([]);
-    const [selectedProduct, setSelectedProduct] = useState({});
+    const [game, setGame] = useState([]);
+    const [selected, setSelected] = useState({});
     const navigate= useNavigate()
 
     const style = {
@@ -25,52 +25,52 @@ function FormUpdate() {
     useEffect(() => {
         axios.get('http://localhost:5000/api/form/'+id)
             .then((res) => {
-                setProducts(res.data)
+                setGame(res.data)
                 
             })
             .catch()
     })
 
-    const updateProduct=(e)=>{
+    const update=(e)=>{
         e.preventDefault()
-        let payload = { name: productName, price: productPrice, stock: productStock, category: productCategory }
-        axios.patch('http://localhost:5000/api/form/'+id, payload)
+        let payload = { name: Name, price: Price, date: Date, ganre: Ganre, image: Image, info: Info }
+        axios.patch('http://localhost:5000/api/games/'+id, payload)
         .then(res=>{
             console.log('userEditSuccessfully')
-            navigate('/form')
+            navigate('/AddGame')
         })
     }
 
     return (
 
         <div style={{ border: "2px black solid", margin: 'auto', borderRadius: '5px', width: "50%" }} className="container">
-            <form onSubmit={updateProduct}>
+            <form onSubmit={update}>
                 <div className="form">
                     <h1 style={{ color: "black" }} >Products</h1>
                     <div >
                         <input style={style}
                             type="text"
-                            placeholder= {products.name}
-                            onChange={(e => setProductName(e.target.value))}
+                            placeholder= {game.name}
+                            onChange={(e => setName(e.target.value))}
                         />
                         <input style={style}
                             type="number"
-                            placeholder={products.price}
-                            onChange={(e => setProductPrice(e.target.value))}
+                            placeholder={game.price}
+                            onChange={(e => setPrice(e.target.value))}
                         />
                         <input style={style}
                             type="number"
-                            placeholder={products.stock}
-                            onChange={(e => setProductStock(e.target.value))}
+                            placeholder={game.stock}
+                            onChange={(e => setDate(e.target.value))}
                         />
                         <input style={style}
                             type="text"
-                            placeholder={products.category}
-                            onChange={(e => setProductCategory(e.target.value))}
+                            placeholder={game.category}
+                            onChange={(e => setGanre(e.target.value))}
                         />
                         
-                        <button onClick={e=>updateProduct(e)} style={style}>Update Product</button>
-                        <button style={style}>Delete Product</button>
+                        <button onClick={e=>update(e)} style={style}>Update Game</button>
+                        <button style={style}>Delete Game</button>
                     </div>
                 </div>
             </form>

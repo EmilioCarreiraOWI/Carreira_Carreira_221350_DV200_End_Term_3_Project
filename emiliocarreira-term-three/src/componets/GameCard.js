@@ -30,8 +30,8 @@ const GameCard = ({ game }) => {
                         <strong className="headings">Game Price: </strong><br /><p className="normal-text">{game.price}</p><br />
                         </MDBCardText>
                         <MDBCardText >
-                        <Button className="mx-2" varient="danger" onClick={() => handleDelete(game._id)}>Delete</Button>
-                        <Link to={`/update/${product._id}`} className="btn btn-sm btn-success me-2">Update</Link>
+                        <Button className="mx-2 btn-danger" onClick={() => handleDelete(game._id)}>Delete</Button>
+                        <Link to={`/update/${game._id}`} className="btn btn-success me-2">Update</Link>
                         </MDBCardText>
                     </MDBCardBody>
                     </MDBCol>
