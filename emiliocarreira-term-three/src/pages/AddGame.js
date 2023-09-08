@@ -232,7 +232,7 @@ function AddGame() {
                 </Col>
             </Row>
             <Row>
-                <GameList />
+                {/* <GameList /> */}
             </Row>
             
             

@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import {useNavigate} from 'react-router-dom';
-import ClientGameList from '../componets/ClientCardLIst';
+// import ClientGameList from '../componets/ClientCardLIst';
 
 
   
@@ -48,7 +48,7 @@ const navigateToIndevidual = () => {
         </Container>
 
         <Container id='container2'>
-            <ClientGameList />
+            {/* <ClientGameList /> */}
         </Container>
 
       </>

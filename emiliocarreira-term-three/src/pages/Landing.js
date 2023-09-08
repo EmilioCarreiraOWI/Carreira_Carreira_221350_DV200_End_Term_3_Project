@@ -7,9 +7,9 @@ import Container from 'react-bootstrap/Container';
 import { Carousel } from 'react-carousel-minimal';
 import 'react-multi-carousel/lib/styles.css';
 import {useNavigate} from 'react-router-dom';
-import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
-import DisplayIDs_10 from '../componets/10_IDS';
-import DisplayIDs_5 from '../componets/5_IDS';
+// import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
+// import DisplayIDs_10 from '../componets/10_IDS';
+// import DisplayIDs_5 from '../componets/5_IDS';
 import axios from 'axios';
 
 
@@ -167,7 +167,7 @@ function Landing() {
         </Row>
         <Row>
           <Col>
-            <DisplayIDs_10 />
+            {/* <DisplayIDs_10 /> */}
           </Col>
         </Row>
         <Row className='mt-4'> 
@@ -177,7 +177,7 @@ function Landing() {
         </Row>
         <Row>
           <Col>
-            <DisplayIDs_5 />
+            {/* <DisplayIDs_5 /> */}
           </Col>
         </Row>
      </Container>
