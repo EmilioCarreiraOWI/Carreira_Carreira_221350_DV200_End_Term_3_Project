@@ -20,11 +20,6 @@ function FormUpdate() {
 
     const [game, setGame] = useState([]);
     
-    
-
-    const style = {
-        margin: "10px",
-    }
 
     useEffect(() => {
         axios.get('http://localhost:5000/api/games/'+id)

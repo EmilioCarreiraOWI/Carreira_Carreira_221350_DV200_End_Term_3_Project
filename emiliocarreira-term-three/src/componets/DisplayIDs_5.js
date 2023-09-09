@@ -19,14 +19,12 @@ const DisplayIDs_5 = () => {
 
   return (
     <div>
-      <ul>
         {ids.map((ids) => (
             <Col id='testbox' lg={2} className='normal-text justify-content-center btn mx-3 mt-4' to={`/Indevidual/${ids._id}`}>
                 <img className='card-img w-100 h-auto' src={ids.image} alt={ids.image}></img>
                 <p className='text-center mt-2'>{ids.name}</p>
             </Col>
         ))}
-      </ul>
     </div>
   );
 };

@@ -14,7 +14,7 @@ const ClientList = () => {
     }, [])
 
     return(
-        <Row className="mx-auto">
+        <Row className="justify-content-center">
             {game.map((game) => (
                 <ClientCard key={game._id} id={game._id} game={game} />
             ))}

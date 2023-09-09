@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -7,11 +7,20 @@ import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, 
 
 const GameCard = ({ game }) => {
 
+    
     console.log(game);
-    const handleDelete = (gameID) => {
-        console.log(gameID);
-        axios.delete('http://localhost/api/games/'+gameID);
+    const handleDelete = (game) => {
+        console.log(game);
+        axios.delete('http://localhost/api/games/'+game);
     };
+
+    // const handleDelete = async (id) => {
+    //     try {
+    //       await axios.delete(`your-api-url/${id}`); // Replace with your API endpoint and the resource ID to delete
+    //       setDeletedItemId(id); // Store the deleted item's ID for UI updates
+    //       fetchData(); // Refetch the data to update the UI with the deleted item removed
+    //     } catch (error) {
+    //       console.error('Error deleting item:', error);
 
     return (
         <Col md={4}>
