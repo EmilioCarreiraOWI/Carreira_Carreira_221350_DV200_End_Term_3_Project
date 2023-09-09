@@ -5,7 +5,7 @@ import axios from "axios";
 
 const ClientList = () => {
 
-    const [ game, setGame ] = useState([]);
+    const [ games, setGame ] = useState([]);
 
     useEffect(() => {
         axios.get('http://localhost:5000/api/games')
@@ -15,7 +15,7 @@ const ClientList = () => {
 
     return(
         <Row className="justify-content-center">
-            {game.map((game) => (
+            {games.map((game) => (
                 <ClientCard key={game._id} id={game._id} game={game} />
             ))}
         </Row>

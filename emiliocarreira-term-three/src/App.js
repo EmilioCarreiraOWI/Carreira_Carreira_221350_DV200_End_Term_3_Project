@@ -38,10 +38,6 @@ function App() {
         <Route path='/SignUp.js' element= { <SignUp/> } />
         <Route path='/AddGame.js' element= { <AddGame/> } />
         <Route path='/update/:id' element={<FormUpdate />} />
-
-        
-        
-        
       </Routes>
     
       

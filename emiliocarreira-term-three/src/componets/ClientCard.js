@@ -3,14 +3,31 @@ import { Link } from "react-router-dom";
 import Col from "react-bootstrap/Col";
 
 
+
 const ClientCard = ({ game }) => {
+
+    const handleSelectGame = (gameId) => {
+        // Save the selected game ID to sessionStorage
+        sessionStorage.setItem('selectedGameId', gameId);
+      };
 
 
     return (
-        <Col id='testbox' lg={2} className='normal-text justify-content-center btn mx-3 mt-4' to={`/Indevidual/${game._id}`}>
-            <img className='card-img w-100 h-auto' src={game.image} alt={game.image}></img>
-            <Link to={`/Indevidual/${game._id}`} className="btn btn-secondary text-center mt-2 w-100 btn-outline-light">{game.name}</Link>
+        <Col md={2} id="testbox" className="btn m-3">
+                <img
+                    className='card-img w-100 h-auto'
+                    src={game.image}
+                    alt={game.image}
+                ></img>
+                <Link
+                    to='/Indevidual' // Navigate to the other page where you want to display the selected game ID
+                    className="btn btn-secondary text-center mt-2 w-100 btn-outline-light"
+                    onClick={() => handleSelectGame(game.id)}
+                >
+                    {game.name}
+                </Link>
         </Col>
+        
         
     )
 
