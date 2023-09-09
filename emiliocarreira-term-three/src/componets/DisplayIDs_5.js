@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Col from 'react-bootstrap/esm/Col';
+import { Link } from 'react-router-dom';
 
 const DisplayIDs_5 = () => {
   const [ids, setIds] = useState([]);
@@ -22,7 +23,7 @@ const DisplayIDs_5 = () => {
         {ids.map((ids) => (
             <Col id='testbox' lg={2} className='normal-text justify-content-center btn mx-3 mt-4' to={`/Indevidual/${ids._id}`}>
                 <img className='card-img w-100 h-auto' src={ids.image} alt={ids.image}></img>
-                <p className='text-center mt-2'>{ids.name}</p>
+                <Link to={`/Indevidual/${ids._id}`} className="btn btn-secondary text-center mt-2 w-100 btn-outline-light">{ids.name}</Link>
             </Col>
         ))}
     </div>
