@@ -18,12 +18,11 @@ router.get('/api/games/:id', async (req, res) => {
 
 //Update
 router.put('/api/games/:id', async (req, res) => {
-    const { id } = req.params.id
-    await GameSchema.updateOne({id} , req.body)
+    const { id } = req.params; // Change this line
+    await GameSchema.updateOne({ _id: id }, req.body) // Use _id instead of id
         .then(response => res.json(response))
-        .catch(error => res.status(500).json(error))
-})
-
+        .catch(error => res.status(500).json(error));
+});
 
 //Create
 router.post('/api/games', async (req, res) => {

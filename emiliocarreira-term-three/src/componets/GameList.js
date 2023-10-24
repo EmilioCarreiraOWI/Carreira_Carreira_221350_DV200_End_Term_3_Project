@@ -12,6 +12,7 @@ const GameList = () => {
         .then(result => setGame(result.data))
         .catch(err => console.log(err))
     }, [])
+    console.log(GameList);
 
     return(
         <Row className="mx-auto">

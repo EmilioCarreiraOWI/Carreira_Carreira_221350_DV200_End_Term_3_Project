@@ -33,7 +33,7 @@ function App() {
         <Route path='/More.js' element= { <More/> } />
         <Route path='/Library.js' element= { <Library/> } />
         <Route path='/Cart.js' element= { <Cart/> } />
-        <Route path='/Indevidual.js' element= { <Indevidual/> } />
+        <Route path='/Indevidual' element= { <Indevidual/> } />
         <Route path='/Login.js' element= { <Login/> } />
         <Route path='/SignUp.js' element= { <SignUp/> } />
         <Route path='/AddGame.js' element= { <AddGame/> } />

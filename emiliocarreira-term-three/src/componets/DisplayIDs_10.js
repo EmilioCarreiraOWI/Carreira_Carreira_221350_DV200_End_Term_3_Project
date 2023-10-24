@@ -11,8 +11,10 @@ const DisplayIDs_10 = () => {
     // Replace 'your-api-endpoint' with your actual API endpoint URL
     axios.get('http://localhost:5000/api/games')
       .then((response) => {
+
         const first10Ids = response.data.slice(0, 10); // Get the first 10 IDs
         setGame(first10Ids);
+        //console.log(first10Ids)
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
@@ -33,9 +35,9 @@ const DisplayIDs_10 = () => {
                   alt={game.image}
               ></img>
               <Link
-                  to='/Indevidual' // Navigate to the other page where you want to display the selected game ID
+                  to={`/Indevidual?gameId=${game._id}`} // Navigate to the other page where you want to display the selected game ID
                   className="btn btn-secondary text-center mt-2 w-100 btn-outline-light"
-                  onClick={() => handleSelectGame(game.id)}
+                  onClick={() => handleSelectGame(game._id)}
               >
                   {game.name}
               </Link>

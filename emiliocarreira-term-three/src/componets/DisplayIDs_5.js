@@ -35,9 +35,9 @@ const DisplayIDs_5 = () => {
                   alt={game.image}
               ></img>
               <Link
-                  to='/Indevidual' // Navigate to the other page where you want to display the selected game ID
+                  to={`/Indevidual?gameId=${game._id}`} // Navigate to the other page where you want to display the selected game ID
                   className="btn btn-secondary text-center mt-2 w-100 btn-outline-light"
-                  onClick={() => handleSelectGame(game.id)}
+                  onClick={() => handleSelectGame(game._id)}
               >
                   {game.name}
               </Link>
