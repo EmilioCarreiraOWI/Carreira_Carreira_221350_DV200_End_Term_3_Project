@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/esm/Col';
 import { useEffect, useState } from 'react';
 
 function Cart() { 
-    const [movies, setMovies] = useState([]);
+    const [games, setMovies] = useState([]);
 
     useEffect(() => {
         // Fetch the movies array from localStorage when the component mounts
@@ -17,12 +17,12 @@ function Cart() {
 
     const calculateTotal = () => {
         // Calculate the total price of all movies
-        return movies.reduce((total, movie) => total + movie.price, 0);
+        return games.reduce((total, movie) => total + movie.price, 0);
     };
 
     const removeFromList = (index) => {
         // Remove the movie at the specified index from the list
-        const updatedMovies = [...movies];
+        const updatedMovies = [...games];
         updatedMovies.splice(index, 1);
         setMovies(updatedMovies);
 
@@ -31,30 +31,38 @@ function Cart() {
     };
 
     return (
-        <Container>
-        <Row className='mt-3'>
-            <Col lg={12} className='justify-content-center'>
-                <h2>Movie List</h2>
-            </Col>
-        </Row>
-        {movies.length === 0 ? (
+    <>
+        <Container id='topheading1'>
+                <Row className='mt-3 mb-3'>
+                    <Col lg={12} className='justify-content-center'>
+                        <h2>CART</h2>
+                    </Col>
+                </Row>
+            </Container>
+
+        <Container id='container2'>
+        {games.length === 0 ? (
             <Row className='mt-3'>
                 <Col lg={12}>
-                    <p>No movies available.</p>
+                    <p className='text-white'>No Games available in Cart.</p>
                 </Col>
             </Row>
         ) : (
             <>
-                {movies.map((movie, index) => (
-                    <Row key={index} className='mt-3'>
-                        <Col lg={3}>
-                            <img className='movie-img w-100 h-auto' src={movie.image} alt='...'></img>
+            
+                {games.map((game, index) => (
+                    <Row key={index} className='mt-5'>
+                        <Col lg={2}>
+                            <img className='card-img w-75 h-auto float-end' src={game.image} alt='...'></img>
                         </Col>
-                        <Col lg={9}>
-                            <h3>{movie.name}</h3>
-                            <p>Price: {movie.price}</p>
-                            <p>Ganre: {movie.ganre}</p>
-                            <p>Date: {movie.date}</p>
+                        <Col lg={8}>
+                            <h3 className='headings'>{game.name}</h3>
+                            <p className='text-white'>Ganre: {game.ganre}</p>
+                            <p className='text-white'>Date: {game.date}</p>
+                            
+                        </Col>
+                        <Col lg={2}>
+                            <h4 className='text-white'>Price: R{game.price}</h4>
                             <button className='btn btn-danger' onClick={() => removeFromList(index)}>
                                     Remove from List
                             </button>
@@ -62,13 +70,15 @@ function Cart() {
                     </Row>
                 ))}
                 <Row className='mt-3'>
-                    <Col lg={12}>
-                        <p>Total Price: {calculateTotal()}</p>
+                    <Col lg={10}></Col>
+                    <Col lg={2}>
+                        <h4 className='text-white'>Total: R{calculateTotal()}</h4>
                     </Col>
                 </Row>
             </>
         )}
     </Container>
+    </>
     );
 }
 

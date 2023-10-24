@@ -23,6 +23,7 @@ function Indevidual() {
                 setSelectedGameId(response.data);
                 setReadyCart((prevReadyCart) => {
                     const newReadyCart = {
+                        'image': response.data.image,
                         'name': response.data.name,
                         'price': response.data.price,
                         'ganre': response.data.ganre,
@@ -85,7 +86,7 @@ function Indevidual() {
                     <Col lg={8} className='text-white' id='Indevidual'>
                         <h3>{selectedGameId.name}</h3>
                         <strong className="headings">Info:</strong> <p>{selectedGameId.info}</p>
-                        <strong className="headings">Price:</strong> <p>{selectedGameId.price}</p>
+                        <strong className="headings">Price:</strong> <p>R{selectedGameId.price}</p>
                         <strong className="headings">Ganre:</strong> <p>{selectedGameId.ganre}</p>
                         <strong className="headings">Date:</strong> <p>{selectedGameId.date}</p>
                         <button className='btn btn-success' onClick={addToCart}>Add To Cart</button>
