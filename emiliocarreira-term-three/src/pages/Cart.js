@@ -7,27 +7,27 @@ import Col from 'react-bootstrap/esm/Col';
 import { useEffect, useState } from 'react';
 
 function Cart() { 
-    const [games, setMovies] = useState([]);
+    const [games, setGames] = useState([]);
 
     useEffect(() => {
         // Fetch the movies array from localStorage when the component mounts
-        const storedMovies = JSON.parse(localStorage.getItem('movies')) || [];
-        setMovies(storedMovies);
+        const storedGames = JSON.parse(localStorage.getItem('games')) || [];
+        setGames(storedGames);
     }, []);
 
     const calculateTotal = () => {
         // Calculate the total price of all movies
-        return games.reduce((total, movie) => total + movie.price, 0);
+        return games.reduce((total, games) => total + games.price, 0);
     };
 
     const removeFromList = (index) => {
         // Remove the movie at the specified index from the list
-        const updatedMovies = [...games];
-        updatedMovies.splice(index, 1);
-        setMovies(updatedMovies);
+        const updatedGames = [...games];
+        updatedGames.splice(index, 1);
+        setGames(updatedGames);
 
         // Update localStorage with the modified list
-        localStorage.setItem('movies', JSON.stringify(updatedMovies));
+        localStorage.setItem('games', JSON.stringify(updatedGames));
     };
 
     return (

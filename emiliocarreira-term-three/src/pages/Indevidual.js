@@ -48,22 +48,22 @@ function Indevidual() {
 
     const addToCart = () => {
        
-            // Check if "movies" array exists in local storage
-            const moviesInLocalStorage = JSON.parse(localStorage.getItem('movies')) || [];
+            // Check if "Games" array exists in local storage
+            const gamesInLocalStorage = JSON.parse(localStorage.getItem('games')) || [];
     
             // Check if the movie is already in the cart
-            const isMovieInCart = moviesInLocalStorage.some(movie => movie.name === readyCart.name);
+            const isGamesInCart = gamesInLocalStorage.some(games => games.name === readyCart.name);
     
-            if (isMovieInCart) {
+            if (isGamesInCart) {
                 alert('This movie is already in the cart.');
             } else {
                 // Add the new movie to the array
-                const updatedMovies = [...moviesInLocalStorage, readyCart];
+                const updatedGames = [...gamesInLocalStorage, readyCart];
     
                 // Write the updated array back to local storage
-                localStorage.setItem('movies', JSON.stringify(updatedMovies));
+                localStorage.setItem('games', JSON.stringify(updatedGames));
     
-                alert('Movie added to the cart.');
+                alert(selectedGameId.name + ' added to the cart.');
             }
         }
     
