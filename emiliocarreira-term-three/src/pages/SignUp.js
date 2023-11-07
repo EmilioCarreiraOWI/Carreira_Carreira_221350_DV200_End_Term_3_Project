@@ -12,45 +12,31 @@ import axios from 'axios';
 
 function SignUp() {
 
-    const navigate = useNavigate();
+  const [data, setData] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-    
-    const navigateToCancel = () => {
-        // 👇️ navigate to /Cart
-        navigate('/');
-      };
-
-        const [data, setData] = useState({
-            firstName: "",
-            lastName: "",
-            email: "",
-            password: "",
-        })
-
-    const [error, setError] = useState()
-    const handleChange = ({ currentTarget: input }) => {
-        setData({...data, [input.name]: input.value}); 
-    };
+  const handleChange = ({ currentTarget: input }) => {
+    setData({ ...data, [input.name]: input.value });
+  };
 
     const handleSubmit = async (e) => {
-        e.provent.defult();
+        e.preventDefault();
         try {
-            const url = "http://localhost:5000/api/user";
-            const { data: res } = await axios.post(url,data);
-            navigate("/login")
-            console.log (res.message);
-
+          const url = "http://localhost:5000/api/registerUser";
+          const { data: res } = await axios.post(url, data);
+          localStorage.setItem("token", res.data);
+          navigate("/Login");
         } catch (error) {
-            if (error.response && 
-                error.response.status >= 400 &&
-                error.response.status <= 500) {
-                    setError(error.response.data.message)
-                }
+          if (
+            error.response &&
+            error.response.status >= 400 &&
+            error.response.status <= 500
+          ) {
+            setError(error.response.data.message);
+          }
         }
-    };
-    
-        
-    
+      };
 
     return (
 
@@ -99,55 +85,53 @@ function SignUp() {
                 <Row>
                     <Col>
                         <Form.Group className="mb-3" controlId="formBasicName">
-                            <Form.Label className='headings'><h3>Name:</h3></Form.Label>
                             <Form.Control className="form-input" 
-                                type="text" 
-                                placeholder="Enter Name" 
+                                type="text"
+                                placeholder="First Name"
                                 name="firstName"
                                 onChange={handleChange}
                                 value={data.firstName}
                                 required
                             />
+                            <p className='post-descriptor headings'>Enter First name</p>
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group className="mb-3" controlId="formBasicLastName">
-                            <Form.Label className='headings'><h3>Surname:</h3></Form.Label>
                             <Form.Control className='form-input' 
-                            type="text" 
-                            placeholder="Enter Surname" 
-                            name="lastName"
-                            onChange={handleChange}
-                            value={data.lastName}
-                            required
+                                type="text"
+                                placeholder="Last Name"
+                                name="lastName"
+                                onChange={handleChange}
+                                value={data.lastName}
+                                required
                         />
+                        <p className='post-descriptor headings'>Enter Last Name</p>
                         </Form.Group>
                     </Col>
-                        
-                    
                 </Row>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label className='headings'><h3>Email address:</h3></Form.Label>
                         <Form.Control className='form-input' 
-                            type="email" 
-                            placeholder="Create Email" 
+                            type="email"
+                            placeholder="Email"
                             name="email"
                             onChange={handleChange}
                             value={data.email}
                             required
                         />
+                        <p className='post-descriptor headings'>Enter Email</p>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label className='headings'><h3>Password:</h3></Form.Label>
                         <Form.Control className='form-input' 
-                            type="password" 
-                            placeholder="Create Password" 
+                            type="password"
+                            placeholder="Password"
                             name="password"
                             onChange={handleChange}
                             value={data.password}
                             required
                         />
+                        <p className='post-descriptor headings'>Enter Password</p>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -156,12 +140,16 @@ function SignUp() {
 
                         {error && <div className='error_msg'>{error}</div>}
 
-                    <Button onClick={navigateToCancel} id='Form-btn-SignUp' variant="secondary" type="submit">
+                    {/* <Button onClick={navigateToCancel}  variant="secondary" type="submit">
                         Cancel?
-                    </Button>
-                    <Button id='Form-btn-login' variant="primary" type="submit">
+                    </Button> */}
+                    <Button type="submit" id='Form-btn-login' className='btn btn-primary'>
                         Sign Up!
                     </Button>
+
+                    {/* <Button id='' variant="primary" type="submit">
+                        Sign Up!
+                    </Button> */}
                 </Form>
             </Col>
             </Row>

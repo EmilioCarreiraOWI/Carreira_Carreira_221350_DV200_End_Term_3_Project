@@ -1,6 +1,9 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+//pages
 import Landing from './pages/Landing.js';
 import Library from './pages/Library.js';
 import More from './pages/More.js';
@@ -20,30 +23,39 @@ import FormUpdate from './pages/UpdateGame';
 
 function App() {
 
-  // const user = localStorage.getItem('token');
+  const user = localStorage.getItem("token");
 
   return (
     <div>
-      <BasicNav />
-    
-    
-      <Routes>
-        {/* {user && <Route exact path='/' element= { <Landing />} />} */}
-        <Route exact path='/' element= { <Landing />} />
-        <Route path='/More.js' element= { <More/> } />
-        <Route path='/Library.js' element= { <Library/> } />
-        <Route path='/Cart.js' element= { <Cart/> } />
-        <Route path='/Indevidual' element= { <Indevidual/> } />
-        <Route path='/Login.js' element= { <Login/> } />
-        <Route path='/SignUp.js' element= { <SignUp/> } />
-        <Route path='/AddGame.js' element= { <AddGame/> } />
-        <Route path='/update/:id' element={<FormUpdate />} />
-      </Routes>
-    
-      
+      {user ? (
+      <>
+        <BasicNav />
 
-      <BasicFooter />
+          <Routes>
+            <Route path="/" element={<Navigate replace to="/Landing" />} />
+            <Route exact path='/' element= { <Landing />} />
+            <Route path='/More' element= { <More/> } />
+            <Route path='/Library' element= { <Library/> } />
+            <Route path='/Cart' element= { <Cart/> } />
+            <Route path='/Indevidual' element= { <Indevidual/> } />
+            <Route path='/AddGame' element= { <AddGame/> } />
+            <Route path='/update/:id' element={<FormUpdate />} />
+          </Routes>
+
+        <BasicFooter />
+      </>
+    ) : (
+      <>
+        <Routes>
+          <Route path="/" element={<Navigate replace to="/Login" />} />
+          <Route path='/Login' element= { <Login/> } />
+          <Route path='/SignUp' element= { <SignUp/> } />
+        </Routes>
+      </>
+    )}
     </div>
+
+    
 
     
     

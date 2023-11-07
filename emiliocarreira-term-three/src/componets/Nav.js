@@ -2,6 +2,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import Container from "react-bootstrap/esm/Container";
 import Button from "react-bootstrap/esm/Button";
+import ProfileDropdown from "./ProfileDorpdown";
 
 
 function BasicNav() {
@@ -53,24 +54,22 @@ function BasicNav() {
                         <li class="nav-item">
                             <a class="nav-link" href="./More.js">More Games</a>
                         </li>
-                        <li class="nav-item">
+                        {/* <li class="nav-item">
                             <a class="nav-link" href="./Library.js">Librery</a>
-                        </li>
+                        </li> */}
                         <li class="nav-item">
                             <a class="nav-link" href="./Cart.js">Cart</a>
                         </li>
-                        <li class="nav-item">
+                        {/* <li class="nav-item">
                             <a class="nav-link" href="./Indevidual.js"></a>
-                        </li>
+                        </li> */}
                     </ul>
                     
                 </div>
                 <div>
                     <ul className="navbar-nav ml-auto headings justify-content-end">
                         <li class="nav-item">
-                            <Button id='Form-btn-SignUp' onClick={handleLogout}>
-                                Logout
-                            </Button>
+                            <ProfileDropdown />
                         </li> 
                         
                     </ul>

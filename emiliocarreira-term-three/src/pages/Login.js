@@ -9,47 +9,55 @@ import Col from 'react-bootstrap/esm/Col';
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import { useState } from 'react';
+import { jwtDecode } from "jwt-decode";
+import { Link } from 'react-router-dom';
 
 function Login() {
 
-    const navigate = useNavigate();
+    const [data, setData] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("")
+    const [error, setError] = useState("");
 
-    const navigateToLanding = () => {
-      // 👇️ navigate to /Cart
-      navigate('/');
-    };
-    const navigateToSignUp = () => {
-        // 👇️ navigate to /Cart
-        navigate('/SignUp.js');
-      };
-
-      const [data, setData] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: ""
-        })
-
-        const [error, setError] = useState()
-        const handleChange = ({ currentTarget: input }) => {
-            setData({...data, [input.name]: input.value}); 
-        };
+    
 
         const handleSubmit = async (e) => {
-            e.provent.defult();
+            e.preventDefault();
+        
+            const userInfo = {
+              email: email,
+              password: password,
+            };
+        
             try {
-                const url = "http://localhost:5000/api/auth";
-                const { data: res } = await axios.post(url,data);
-                localStorage.setItem("token", res.data);
-                window.location = "/"
+              const url = "http://localhost:5000/api/auth/";
+              const response = await axios.post(url, userInfo);
+              const token = response.data.data;
+              console.log(response.data);
+        
+              const decodedToken = jwtDecode(token);
+              // const isAdmin = JSON.parse(decodedToken.isAdmin);
+        
+              localStorage.setItem("token", token);
+              // localStorage.setItem("isAdmin", isAdmin);
+        
+              // console.log(localStorage.token);
+              // console.log(decodedToken.email);
+              // console.log(decodedToken.firstName);
+              // console.log(decodedToken.lastName);
+              // console.log(decodedToken._id);
+        
+              window.location = "/Home";
             } catch (error) {
-                if (error.response && 
-                    error.response.status >= 400 &&
-                    error.response.status <= 500) {
-                        setError(error.response.data.message)
-                    }
+              if (
+                error.response &&
+                error.response.status >= 400 &&
+                error.response.status <= 500
+              ) {
+                setError(error.response.data.message);
+              }
             }
-        };
+          };
 
     return (
 
@@ -98,38 +106,52 @@ function Login() {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label className='headings'><h3>Email address:</h3></Form.Label>
                         <Form.Control id='form-imput' 
-                        type="email" 
-                        placeholder="Enter email" 
-                        name="email"
-                        onChange={handleChange}
-                        value={data.email}
-                        required
+                            type="email"
+                            placeholder="Email"
+                            name="email"
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
+                            required
+                            className='input'
                         />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label className='headings'><h3>Password:</h3></Form.Label>
                         <Form.Control id='form-imput' 
-                        type="password" 
-                        placeholder="Enter Password" 
-                        name="password"
-                        onChange={handleChange}
-                        value={data.password}
-                        required
+                            type="password"
+                            placeholder="Password"
+                            name="password"
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                            required
+                            className='input'
                         />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check className='headings' type="checkbox" label="Check me out" />
+                        <Form.Check className='headings' type="checkbox" label="Remember me" />
                     </Form.Group>
 
                     {error && <div className='error_msg'>{error}</div>}
 
-                    <Button onClick={navigateToSignUp} id='Form-btn-SignUp' variant="secondary" type="submit">
+                    {/* <Button onClick={navigateToSignUp}  variant="secondary" type="submit">
                         Sign Up!
-                    </Button>
-                    <Button onClick={navigateToLanding} id='Form-btn-login' variant="primary" type="submit">
+                    </Button> */}
+
+                    <Link to="/signup">
+                        <button type="button" id='Form-btn-SignUp' className='btn btn-primary'>
+                            Sign Up
+                        </button>
+                    </Link>
+
+                    {/* <Button onClick={navigateToLanding}  variant="primary" type="submit">
                         Login
-                    </Button>
+                    </Button> */}
+
+                        <button type="submit" id='Form-btn-login' className='btn btn-primary'>
+                            Sign In
+                        </button> 
+
                 </Form>
             </Col>
             </Row>

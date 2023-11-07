@@ -1,8 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-// const { log } = require('console');
 const gameRoute = require('./routes/games');
+const userRoutes = require("./routes/user");
+const authRoutes = require("./routes/auth");
 // const userRoute = require('./routes/user.js')
 // const userRoutes = require("./routes/users");
 // const authRoutes = require("./routes/auth");  
@@ -13,11 +14,13 @@ const app = express();
 
 //Used with React!
 app.use(cors({
-    origin: 'http://localhost:3000'
+    // origin: 'http://localhost:3000'
 }))
 
-app.use(express.json())
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(userRoutes);
+app.use(authRoutes);
 
 app.use(gameRoute)
 
