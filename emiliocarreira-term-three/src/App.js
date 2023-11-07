@@ -4,10 +4,10 @@ import { Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //pages
-import Landing from './pages/Landing.js';
-import Library from './pages/Library.js';
-import More from './pages/More.js';
-import Cart from './pages/Cart.js';
+import Landing from './pages/Landing';
+import Library from './pages/Library';
+import More from './pages/More';
+import Cart from './pages/Cart';
 import BasicNav from './componets/Nav';
 import Indevidual from './pages/Indevidual';
 import BasicFooter from './componets/Footer';
@@ -15,9 +15,6 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import AddGame from './pages/AddGame';
 import FormUpdate from './pages/UpdateGame';
-
-
-
 
 
 
@@ -33,12 +30,12 @@ function App() {
 
           <Routes>
             <Route path="/" element={<Navigate replace to="/Landing" />} />
-            <Route exact path='/' element= { <Landing />} />
+            <Route path='/Landing' element= { <Landing />} />
             <Route path='/More' element= { <More/> } />
-            <Route path='/Library' element= { <Library/> } />
+            <Route path='/Library' element= { <Library /> } />
             <Route path='/Cart' element= { <Cart/> } />
-            <Route path='/Indevidual' element= { <Indevidual/> } />
-            <Route path='/AddGame' element= { <AddGame/> } />
+            <Route path='/Indevidual' element= { <Indevidual /> } />
+            <Route path='/AddGame' element= { <AddGame /> } />
             <Route path='/update/:id' element={<FormUpdate />} />
           </Routes>
 
@@ -48,17 +45,12 @@ function App() {
       <>
         <Routes>
           <Route path="/" element={<Navigate replace to="/Login" />} />
-          <Route path='/Login' element= { <Login/> } />
-          <Route path='/SignUp' element= { <SignUp/> } />
+          <Route path='/Login' element= { <Login /> } />
+          <Route path='/SignUp' element= { <SignUp /> } />
         </Routes>
       </>
     )}
     </div>
-
-    
-
-    
-    
   );
 }
 

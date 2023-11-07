@@ -313,3 +313,22 @@
 	width: auto;
 	height: auto;
   }
+
+  .user-dropdown {
+    font-family: Bungee Inline;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .profile-dropdown-links {
+    font-family: Bungee;
+    color: #FFF;
+    font-size: large;
+    text-decoration: none;
+  }
+  
+  .profile-dropdown-container {
+    background-color: #2d2d2dbb;
+    border-radius: 10px;
+    border: 3px solid rgba(162, 99, 55, 1);
+  }

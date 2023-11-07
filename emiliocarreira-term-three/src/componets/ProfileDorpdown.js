@@ -18,7 +18,7 @@ function ProfileDropdown() {
 
   return (
     <>
-      <div className="text-end profile-dropdown-container">
+      <div className="profile-dropdown-container">
         <Dropdown>
           <Dropdown.Toggle className="user-dropdown">
             <span>
@@ -26,12 +26,7 @@ function ProfileDropdown() {
             </span>
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            <div className="profile-dropdown-links">
-              <Link to="/profile">My Profile</Link>
-              {/* <Link to="/setting">Settings</Link> */}
-              {'loggedIn' && 'isAdmin' && <Link to="/admin">Admin</Link>}
-              <Link to="/CommunityRequests">Request</Link>
-              <Dropdown.Divider />
+            <div className="text-center profile-dropdown-links">
               <Link to="/Login" onClick={handleLogout}>
                 Log Out
               </Link>

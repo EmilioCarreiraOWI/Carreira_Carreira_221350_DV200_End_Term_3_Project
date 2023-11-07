@@ -47,7 +47,7 @@ function Login() {
               // console.log(decodedToken.lastName);
               // console.log(decodedToken._id);
         
-              window.location = "/Home";
+              window.location = "/";
             } catch (error) {
               if (
                 error.response &&

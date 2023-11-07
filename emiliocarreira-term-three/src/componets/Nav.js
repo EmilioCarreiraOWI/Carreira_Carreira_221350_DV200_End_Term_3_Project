@@ -52,13 +52,13 @@ function BasicNav() {
                             <a class="nav-link" href="./">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./More.js">More Games</a>
+                            <a class="nav-link" href="./More">More Games</a>
                         </li>
                         {/* <li class="nav-item">
                             <a class="nav-link" href="./Library.js">Librery</a>
                         </li> */}
                         <li class="nav-item">
-                            <a class="nav-link" href="./Cart.js">Cart</a>
+                            <a class="nav-link" href="./Cart">Cart</a>
                         </li>
                         {/* <li class="nav-item">
                             <a class="nav-link" href="./Indevidual.js"></a>
