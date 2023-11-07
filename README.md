@@ -1,4 +1,5 @@
-![ClearView Header Image](file:///C:/Users/emili/Desktop/Open%20Window/Year%202/DV%20200/Term%204/Portfolio/Group%2057.png?raw=true)
+![Group 57](https://github.com/EmilioCarreiraOWI/Carreira_Carreira_221350_DV200_End_Term_3_Project/assets/113447065/7cd6f8d4-41b3-4386-a0c1-18e29b6b38f1)
+
 
 - - - -
 
@@ -65,19 +66,19 @@ The idea was to create a centralised hub where students can post questions or ju
 ## UI Design
 
 ### Home Page
-![Home Page UI Design](https://github.com/JugheadStudio/Github-assets/blob/main/Interro/Home%20Page.png?raw=true)
+![Group 31](https://github.com/EmilioCarreiraOWI/Carreira_Carreira_221350_DV200_End_Term_3_Project/assets/113447065/e0260cda-265b-4f09-924a-a15ce84c8f46)
 
-### Post Page
-![Post Page UI Design](https://github.com/JugheadStudio/Github-assets/blob/main/Interro/Post%20Page.png?raw=true)
+### Individual Page
+![Group 58](https://github.com/EmilioCarreiraOWI/Carreira_Carreira_221350_DV200_End_Term_3_Project/assets/113447065/c21cb7d2-4669-4742-8d28-58757e98e9e3)
 
-### Create a Post Page
-![Create a Post UI Design](https://github.com/JugheadStudio/Github-assets/blob/main/Interro/Create%20a%20post.png?raw=true)
+### More Games Page
+![Group 61](https://github.com/EmilioCarreiraOWI/Carreira_Carreira_221350_DV200_End_Term_3_Project/assets/113447065/3d4cf478-a417-4c55-9b52-30404b981148)
 
-### Community Page
-![Community Page UI Design](https://github.com/JugheadStudio/Github-assets/blob/main/Interro/Community.png?raw=true)
+### Sign Up Page
+![Group 60](https://github.com/EmilioCarreiraOWI/Carreira_Carreira_221350_DV200_End_Term_3_Project/assets/113447065/1ee5fb0d-3172-453a-99bd-3a1964326f46)
 
-### Profile Page
-![Profile Page UI Design](https://github.com/JugheadStudio/Github-assets/blob/main/Interro/Profile.png?raw=true)
+### Sign In Page
+![Group 59](https://github.com/EmilioCarreiraOWI/Carreira_Carreira_221350_DV200_End_Term_3_Project/assets/113447065/a8060127-ecd5-44bf-9035-46e878ffbb0b)
 
 ## Development Process
 
