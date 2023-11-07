@@ -1,8 +1,8 @@
-![ClearView Header Image](https://www.figma.com/file/OJbT7BZWbWtOPkdK1bvMB2/Emilio-Carreira?type=design&node-id=1185-64&mode=design&t=UqlTOa3MEIgvT9DZ-4)
+![ClearView Header Image](file:///C:/Users/emili/Desktop/Open%20Window/Year%202/DV%20200/Term%204/Portfolio/Group%2057.png)
 
 - - - -
 
-# About Interro
+# About Game Cloud
 
 Interro is a QnA dashboard created for Open Window students to post questions related to their projects when they get stuck or to just post something they find interesting related to their subjects
 
