@@ -16,17 +16,37 @@ function ProfileDropdown() {
     window.location.reload();
   };
 
+  const placeholderImageUrl =
+    'https://i.pinimg.com/564x/97/53/c7/9753c72c6d14406f178f72324fab7ed3.jpg'; // Replace with your placeholder image URL
+
   return (
     <>
-      <div className="profile-dropdown-container">
+      <div className="text-end profile-dropdown-container">
         <Dropdown>
           <Dropdown.Toggle className="user-dropdown">
+            {decodedToken.image ? (
+              <img
+                className="nav-profile-pic"
+                src={`http://localhost:5000/profileImages/${decodedToken.image}`}
+                alt="..."
+              />
+            ) : (
+              <img
+                className="nav-profile-pic"
+                src={placeholderImageUrl}
+                alt="Placeholder"
+              />
+            )}
             <span>
               {decodedToken.firstName} {decodedToken.lastName}
             </span>
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            <div className="text-center profile-dropdown-links">
+            <div className="profile-dropdown-links">
+              <Link to="/Landing">Home</Link>
+              <Link to="/More">More</Link>
+              <Link to="/Cart">Cart</Link>
+              <Dropdown.Divider />
               <Link to="/Login" onClick={handleLogout}>
                 Log Out
               </Link>

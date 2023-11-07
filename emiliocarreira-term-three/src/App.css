@@ -308,27 +308,121 @@
 }
 
 .file-input-Community {
-	/* Add your desired styles here */
-	/* For example: */
 	width: auto;
 	height: auto;
   }
 
-  .user-dropdown {
-    font-family: Bungee Inline;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  /* ProfileDropdown */
+  .profile-banner {
+    height: 100px;
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
   }
   
-  .profile-dropdown-links {
-    font-family: Bungee;
-    color: #FFF;
-    font-size: large;
-    text-decoration: none;
-  }
-  
-  .profile-dropdown-container {
-    background-color: #2d2d2dbb;
+  .profile-avatar {
+    width: 75px;
+    height: 75px;
+    margin-left: -5px;
     border-radius: 10px;
-    border: 3px solid rgba(162, 99, 55, 1);
+    border: 5px solid lightgrey;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transform: translate(0%, -50%);
   }
+  
+  .nav-profile-pic {
+    width: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .dropdown .btn:hover {
+    color: #FFF;
+    background-color: #2d2d2dbb;
+    border-color: #2d2d2dbb;
+    box-shadow: 0 0 0 2px rgba(162, 99, 55, 1);
+  }
+  
+  .dropdown-item:focus, .dropdown-item:hover {
+    color: #2d2d2dbb;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    display: inline-block;
+    justify-content: end;
+  }
+  
+  .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    color: #FFF;
+    background-color: #2d2d2dbb;
+    border-color: rgba(162, 99, 55, 1);
+  }
+  
+
+  .dropdown .dropdown-menu {
+    border: 3px solid rgba(162, 99, 55, 1);
+    margin-top: 10px;
+    background-color: #2d2d2d;
+    border-radius: 10px;
+    padding: 0;
+    overflow: hidden;
+    padding: 20px 0;
+    text-align: end;
+  }
+  
+  .dropdown-item {
+    color: rgba(162, 99, 55, 1);
+    font-size: 14px;
+  }
+  
+  .user-dropdown {
+    border-radius: 30px;
+    padding: 5px 15px 5px 5px;
+    border: 1px solid rgba(162, 99, 55, 1);
+    color: #FFF;
+    font-size: 20px;
+    font-family: Bungee;
+    align-items: center;
+    display: flex;
+    background-color: #2d2d2dbb;
+  }
+  
+  .user-dropdown span {
+    margin-left: 10px;
+    font-family: Bungee;
+    text-transform: uppercase;
+  }
+  
+  .dropdown-toggle::after {
+    display: none;
+    content: "";
+  }
+  
+  .profile-dropdown-links a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-right: 20px;
+  }
+  
+  .profile-dropdown-links a:hover {
+    color: rgba(162, 99, 55, 1);
+  }
+  
+ 
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+ 

@@ -104,7 +104,6 @@ function Login() {
             <Col sm={8} className='mt-4'>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label className='headings'><h3>Email address:</h3></Form.Label>
                         <Form.Control id='form-imput' 
                             type="email"
                             placeholder="Email"
@@ -114,10 +113,10 @@ function Login() {
                             required
                             className='input'
                         />
+                        <p className='post-descriptor headings'>Enter Email</p>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label className='headings'><h3>Password:</h3></Form.Label>
                         <Form.Control id='form-imput' 
                             type="password"
                             placeholder="Password"
@@ -127,6 +126,7 @@ function Login() {
                             required
                             className='input'
                         />
+                        <p className='post-descriptor headings'>Enter Password</p>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check className='headings' type="checkbox" label="Remember me" />
