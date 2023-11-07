@@ -1,4 +1,4 @@
-![ClearView Header Image](file:///C:/Users/emili/Desktop/Open%20Window/Year%202/DV%20200/Term%204/Portfolio/Group%2057.png)
+![ClearView Header Image](file:///C:/Users/emili/Desktop/Open%20Window/Year%202/DV%20200/Term%204/Portfolio/Group%2057.png?raw=true)
 
 - - - -
 
