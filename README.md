@@ -5,7 +5,7 @@
 
 # About Game Cloud
 
-Interro is a QnA dashboard created for Open Window students to post questions related to their projects when they get stuck or to just post something they find interesting related to their subjects
+For the e-commerce platform Game Cloud, I assumed the responsibility of a full stack developer, implementing the CRUD functionalities of MongoDB. This gaming platform accommodates customers by providing an extensive selection of games to peruse. Three principal categories are displayed on the homepage: Carousel, Popular, and New Games. Through the use of game names or image clicks, users are able to engage with the games through an engrossing hover effect. The carousel is equipped with navigation controls on both ends, facilitating users in effortlessly perusing the assortment. An exhaustive catalogue of all the activities available on the website can be found on the More page. Each column serves as an interactive component featuring a name and an image, which guides users to the Individual Page, which contains comprehensive information about the game. Embrace the opportunity to select your preferred games and engage in a pleasurable gaming experience.
 
 ### Built With
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://www.w3.org/html/)
@@ -16,7 +16,7 @@ Interro is a QnA dashboard created for Open Window students to post questions re
 [![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/en)
 [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 
-![Interro Profile Screenshot](https://github.com/JugheadStudio/Github-assets/blob/main/Interro/profile-screenshot.png?raw=true?raw=true)
+![Screenshot 2023-11-08 075816](https://github.com/EmilioCarreiraOWI/Carreira_Carreira_221350_DV200_End_Term_3_Project/assets/113447065/d514492a-9d71-480f-a7f9-de7843af6322)
 
 ## How To Install
 
@@ -44,20 +44,6 @@ Run the MongoDB server
 ```
 npm run dev
 ```
-
-## Features
-
-| Page                  | Description                                        |
-| --------------------- | -------------------------------------------------- |
-| Login Page            | - Allows all students to create a profile           |
-|                       | - Provides login functionality for registered users  |
-| Home Page             | - Allows students to see the latest announcements   |
-|                       | - Allows students to see all the available communities/subjects |
-| Community Pages       | - Allows users to see all the latest posts and questions from other students |
-| Create Post Page      | - Allows students to create new posts               |
-|                       | - Enables users to choose whether it is a post, question, or announcement |
-| Individual Post Page  | - Allows students to view the whole post           |
-|                       | - Provides the ability to comment and engage with the post |
 
 ## The Idea
 
