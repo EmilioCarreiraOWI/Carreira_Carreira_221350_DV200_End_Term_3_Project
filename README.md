@@ -86,6 +86,9 @@ The project uses MongoDB and full-stack development to provide a dynamic platfor
 ![cover](https://github.com/EmilioCarreiraOWI/Carreira_Carreira_221350_DV200_End_Term_3_Project/assets/113447065/c028c24f-6da4-4ade-8a61-1cd9230641d8)
 
 ## Demonstration Video
+```
+https://drive.google.com/file/d/1Ijew5TUX1rGzU8caVNqO_-3lBeJ07jay/view?usp=sharing
+```
 
 ### License
 [MIT](LICENSE) © Emilio Carreira
