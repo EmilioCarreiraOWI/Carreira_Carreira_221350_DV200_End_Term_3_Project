@@ -83,7 +83,7 @@ The project uses MongoDB and full-stack development to provide a dynamic platfor
 ![💻MacBook Pro](https://github.com/EmilioCarreiraOWI/Carreira_Carreira_221350_DV200_End_Term_3_Project/assets/113447065/25a783a1-fd35-4da8-a5b9-867f56d9759c)
 
 ## Individual page 
-![cover](https://github.com/EmilioCarreiraOWI/Carreira_Carreira_221350_DV200_End_Term_3_Project/assets/113447065/4ca927a8-1e0c-4512-a15d-ea816640a51b)
+![cover](https://github.com/EmilioCarreiraOWI/Carreira_Carreira_221350_DV200_End_Term_3_Project/assets/113447065/c028c24f-6da4-4ade-8a61-1cd9230641d8)
 
 ## Demonstration Video
 
