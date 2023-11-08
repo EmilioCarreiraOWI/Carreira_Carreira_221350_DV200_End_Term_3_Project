@@ -22,7 +22,7 @@ For the e-commerce platform Game Cloud, I assumed the responsibility of a full s
 
 To get started, clone the repo:
 ```
-git clone https://github.com/EmilioCarreiraOWI/DV200_Group1_Term4
+git clone https://github.com/EmilioCarreiraOWI/Carreira_Carreira_221350_DV200_End_Term_3_Project.git
 ```
 
 Navigate to the 'client' folder to install all the dependencies
@@ -47,7 +47,7 @@ npm run dev
 
 ## The Idea
 
-The idea was to create a centralised hub where students can post questions or just share anything that they find interesting or inspirations and have other students engage with the post to either help them or just say thank you.
+The project uses MongoDB and full-stack development to provide a dynamic platform. On Game Cloud's homepage, you may find interactive game displays, carousel navigation, and a comprehensive game catalogue under sections including Carousel, Popular, and New Games. The individual page should include an easy-to-use interface, a wide selection of games, and comprehensive details about each game.
 
 ## UI Design
 
@@ -63,42 +63,29 @@ The idea was to create a centralised hub where students can post questions or ju
 ### Sign Up Page
 ![Group 60](https://github.com/EmilioCarreiraOWI/Carreira_Carreira_221350_DV200_End_Term_3_Project/assets/113447065/1ee5fb0d-3172-453a-99bd-3a1964326f46)
 
-### Sign In Page
+### Sign-In Page
 ![Group 59](https://github.com/EmilioCarreiraOWI/Carreira_Carreira_221350_DV200_End_Term_3_Project/assets/113447065/a8060127-ecd5-44bf-9035-46e878ffbb0b)
 
 ## Development Process
 
-### Highlights
-* Highlights of the website is the simplistic UI and the functionality that gives the user a pleasant user experience.
-* The website is easy to understand and navigate.
-* The website makes use of [Quill.js](https://quilljs.com) rich text editor for seamless post creation and styling.
-
 ### Challenges
-* Future proofing the website in a functional yet optimised way that makes use of components and templates where possible to keep the website running smooth and simplify updates in the future
-* Building the website in such a way that everything is automated, from automatically creating user profiles and displaying only their own posts to creating new communities and automatically generating a community page and adding it to the navbar.
+* transferring the game card to the dedicated page and purchasing the game from there page. in order for it to be stored in the database
+* One of the features worked as intended and was able to update the games on the website. The creator is able to add and remove games from the website, but not update
 
 ## Future Implementations
 
-* Allow Users to view other user Profiles
-* Add admin and moderator functionality to each community
-* Add super admin functionality that allows Open Window staff to post announcements and event details to the home page
-* Allow any student to create their own communities for something like a horror club, DnD club etc.
+* Update Functionality will be added
+* lybrary page will be added, so save the game the users has bought 
 
 ## Mockups
 
-### Profile Mockup
-![Game Cloud Mockup 1](https://github.com/JugheadStudio/Github-assets/blob/main/Interro/1.jpg?raw=true)
+## Home Page
+![💻MacBook Pro](https://github.com/EmilioCarreiraOWI/Carreira_Carreira_221350_DV200_End_Term_3_Project/assets/113447065/25a783a1-fd35-4da8-a5b9-867f56d9759c)
 
-### Community Page Mockup
-![Game Cloud Mockup 2](https://github.com/JugheadStudio/Github-assets/blob/main/Interro/2.jpg?raw=true)
+## Individual page 
+![cover](https://github.com/EmilioCarreiraOWI/Carreira_Carreira_221350_DV200_End_Term_3_Project/assets/113447065/4ca927a8-1e0c-4512-a15d-ea816640a51b)
 
-### Individual Post Page Mockup
-![Game Cloud Mockup 3](https://github.com/JugheadStudio/Github-assets/blob/main/Interro/3.jpg?raw=true)
-
-### Home Page Mockup
-![Game Cloud Mockup 4](https://github.com/JugheadStudio/Github-assets/blob/main/Interro/4.jpg?raw=true)
-
-## Demonstration
+## Demonstration Video
 
 ### License
-[MIT](LICENSE) © Emilio Carreira, Ruan Jordaan, Anke Du Raan, Eric Condradie
+[MIT](LICENSE) © Emilio Carreira
